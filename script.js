@@ -133,13 +133,15 @@ backToTopBtn.addEventListener('click', () => {
     });
 });
 
-// Simple contact form
+// Netlify Forms - Simple success message
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        this.reset();
+        // Let Netlify handle the submission
+        // Just show a success message
+        setTimeout(() => {
+            alert('Thank you for your message! I will get back to you soon.');
+        }, 1000);
     });
 }
 
