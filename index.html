@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Color Theme Picker -->
+    <div id="theme-picker" class="theme-picker">
+        <button class="theme-btn" data-theme="blue" style="background: #2563eb;"></button>
+        <button class="theme-btn" data-theme="green" style="background: #16a34a;"></button>
+        <button class="theme-btn" data-theme="purple" style="background: #9333ea;"></button>
+        <button class="theme-btn" data-theme="red" style="background: #dc2626;"></button>
+        <button class="theme-btn" data-theme="orange" style="background: #ea580c;"></button>
+    </div>
+
     <!-- Loading Spinner -->
     <div id="loading-spinner" class="spinner-hidden">
         <div class="spinner"></div>
@@ -17,6 +26,7 @@
     <!-- Toast Notification -->
     <div id="toast" class="toast-hidden">
         <span id="toast-message"></span>
+        <button onclick="hideToast()">×</button>
     </div>
 
     <nav>
@@ -32,6 +42,9 @@
             </ul>
             <div class="nav-buttons">
                 <button id="theme-toggle">🌙</button>
+                <button id="color-picker-btn" title="Change Theme Color">
+                    <i class="fas fa-palette"></i>
+                </button>
                 <button id="mobile-menu-btn" class="mobile-only">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -91,7 +104,7 @@
         </div>
     </section>
 
-    <!-- NEW: MY WORK GALLERY SECTION -->
+    <!-- MY WORK GALLERY SECTION -->
     <section id="work" class="section">
         <h2 class="section-title">My Work</h2>
         <div class="gallery-container">
@@ -100,6 +113,7 @@
                 <button class="filter-btn" data-filter="web">Websites</button>
                 <button class="filter-btn" data-filter="app">Apps</button>
                 <button class="filter-btn" data-filter="game">Games</button>
+                <button class="filter-btn" data-filter="design">Designs</button>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item" data-category="web">
@@ -111,7 +125,7 @@
                     </div>
                 </div>
                 <div class="gallery-item" data-category="app">
-                    <img src="https://placehold.co/400x300/1e40af/white?text=Mobile+App" alt="Mobile App">
+                    <img src="https://placehold.co/400x300/16a34a/white?text=Mobile+App" alt="Mobile App">
                     <div class="gallery-overlay">
                         <h3>Fitness App</h3>
                         <p>Workout tracking application</p>
@@ -119,18 +133,34 @@
                     </div>
                 </div>
                 <div class="gallery-item" data-category="game">
-                    <img src="https://placehold.co/400x300/3b82f6/white?text=Game+Project" alt="Game Project">
+                    <img src="https://placehold.co/400x300/9333ea/white?text=Game+Project" alt="Game Project">
                     <div class="gallery-overlay">
                         <h3>2D Platformer</h3>
                         <p>Unity game with multiple levels</p>
                         <a href="#" class="gallery-link">View Project</a>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="web">
-                    <img src="https://placehold.co/400x300/2563eb/white?text=Portfolio+Site" alt="Portfolio Site">
+                <div class="gallery-item" data-category="design">
+                    <img src="https://placehold.co/400x300/dc2626/white?text=UI+Design" alt="UI Design">
                     <div class="gallery-overlay">
-                        <h3>Portfolio Design</h3>
-                        <p>Responsive portfolio website</p>
+                        <h3>UI Design</h3>
+                        <p>Modern dashboard design</p>
+                        <a href="#" class="gallery-link">View Project</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="web">
+                    <img src="https://placehold.co/400x300/ea580c/white?text=Web+App" alt="Web App">
+                    <div class="gallery-overlay">
+                        <h3>Web Application</h3>
+                        <p>React-based admin dashboard</p>
+                        <a href="#" class="gallery-link">View Project</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="app">
+                    <img src="https://placehold.co/400x300/2563eb/white?text=iOS+App" alt="iOS App">
+                    <div class="gallery-overlay">
+                        <h3>iOS App</h3>
+                        <p>Social media application</p>
                         <a href="#" class="gallery-link">View Project</a>
                     </div>
                 </div>
@@ -174,7 +204,7 @@
         </div>
     </section>
 
-    <!-- NEW: REVIEWS/TESTIMONIALS SECTION -->
+    <!-- REVIEWS/TESTIMONIALS SECTION -->
     <section id="reviews" class="section">
         <h2 class="section-title">Client Reviews</h2>
         <div class="reviews-container">
@@ -216,7 +246,15 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Idele Richmond. Built with passion and code.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Idele Richmond. Built with passion and code.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
 
     <!-- Back to Top Button -->
@@ -297,12 +335,17 @@
             toast.className = type === 'error' ? 'toast toast-error' : 'toast toast-success';
             
             setTimeout(() => {
-                toast.className = 'toast-hidden';
-            }, 3000);
+                hideToast();
+            }, 5000);
+        }
+
+        function hideToast() {
+            const toast = document.getElementById('toast');
+            toast.className = 'toast-hidden';
         }
     </script>
 
-    <!-- Your existing JavaScript -->
+    <!-- Your main JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
