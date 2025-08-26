@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Idele Richmond - Software Engineer</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -16,11 +15,6 @@
         <button class="theme-btn" data-theme="purple" style="background: #9333ea;"></button>
         <button class="theme-btn" data-theme="red" style="background: #dc2626;"></button>
         <button class="theme-btn" data-theme="orange" style="background: #ea580c;"></button>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast-hidden">
-        <span id="toast-message"></span>
-        <button onclick="hideToast()">×</button>
     </div>
 
     <nav>
@@ -98,7 +92,6 @@
         </div>
     </section>
 
-    <!-- MY WORK GALLERY SECTION -->
     <section id="work" class="section">
         <h2 class="section-title">My Work</h2>
         <div class="gallery-container">
@@ -142,22 +135,6 @@
                         <a href="#" class="gallery-link">View Project</a>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="web">
-                    <img src="https://placehold.co/400x300/ea580c/white?text=Web+App" alt="Web App">
-                    <div class="gallery-overlay">
-                        <h3>Web Application</h3>
-                        <p>React-based admin dashboard</p>
-                        <a href="#" class="gallery-link">View Project</a>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="app">
-                    <img src="https://placehold.co/400x300/2563eb/white?text=iOS+App" alt="iOS App">
-                    <div class="gallery-overlay">
-                        <h3>iOS App</h3>
-                        <p>Social media application</p>
-                        <a href="#" class="gallery-link">View Project</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -198,7 +175,6 @@
         </div>
     </section>
 
-    <!-- REVIEWS/TESTIMONIALS SECTION -->
     <section id="reviews" class="section">
         <h2 class="section-title">Client Reviews</h2>
         <div class="reviews-container">
@@ -256,90 +232,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Firebase SDK -->
-    <script type="module">
-        // Import Firebase functions
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-
-        // Your Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyBB92zYMm2OeYu5L43h-FV2lUMyU7McRPo",
-            authDomain: "idele-portfolio.firebaseapp.com",
-            databaseURL: "https://idele-portfolio-default-rtdb.firebaseio.com",
-            projectId: "idele-portfolio",
-            storageBucket: "idele-portfolio.firebasestorage.app",
-            messagingSenderId: "174961324270",
-            appId: "1:174961324270:web:71481a80cfd407f48b03ff",
-            measurementId: "G-XTYZCTBPZM"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        // Contact form handling
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = this.querySelector('input[type="text"]').value;
-                const email = this.querySelector('input[type="email"]').value;
-                const message = this.querySelector('textarea').value;
-                
-                // Show loading state
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'Sending...';
-                submitBtn.disabled = true;
-                
-                try {
-                    // Save to Firebase
-                    await addDoc(collection(db, 'contacts'), {
-                        name: name,
-                        email: email,
-                        message: message,
-                        timestamp: serverTimestamp()
-                    });
-                    
-                    // Success message
-                    showToast('Thank you for your message! I\'ll get back to you soon.');
-                    this.reset();
-                    
-                } catch (error) {
-                    // Error handling
-                    showToast('Sorry, there was an error sending your message. Please try again.', 'error');
-                    console.error('Firebase error:', error);
-                } finally {
-                    // Reset button
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }
-            });
-        }
-
-        // Toast notification function
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toast-message');
-            
-            toastMessage.textContent = message;
-            toast.className = type === 'error' ? 'toast toast-error' : 'toast toast-success';
-            
-            setTimeout(() => {
-                hideToast();
-            }, 5000);
-        }
-
-        function hideToast() {
-            const toast = document.getElementById('toast');
-            toast.className = 'toast-hidden';
-        }
-    </script>
-
-    <!-- Your main JavaScript -->
-   <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
