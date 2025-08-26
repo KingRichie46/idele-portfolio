@@ -237,20 +237,3 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         mobileMenu.classList.add('mobile-menu-hidden');
         mobileMenu.classList.remove('mobile-menu-visible');
-
-// Force hide loading spinner on page load
-document.addEventListener('DOMContentLoaded', function() {
-    const loadingSpinner = document.getElementById('loading-spinner');
-    if (loadingSpinner) {
-        loadingSpinner.style.display = 'none';
-    }
-});
-
-// And also hide it when window finishes loading
-window.addEventListener('load', function() {
-    const loadingSpinner = document.getElementById('loading-spinner');
-    if (loadingSpinner) {
-        loadingSpinner.style.display = 'none';
-    }
-    console.log("Page fully loaded - spinner hidden");
-});
