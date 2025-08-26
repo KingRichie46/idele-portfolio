@@ -113,8 +113,64 @@
     </footer>
 
     <script src="script.js"></script>
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<!-- Replace the Firebase scripts in your HTML with these: -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBB92zYMm2OeYu5L43h-FV2lUMyU7McRPo",
+    authDomain: "idele-portfolio.firebaseapp.com",
+    databaseURL: "https://idele-portfolio-default-rtdb.firebaseio.com",
+    projectId: "idele-portfolio",
+    storageBucket: "idele-portfolio.firebasestorage.app",
+    messagingSenderId: "174961324270",
+    appId: "1:174961324270:web:71481a80cfd407f48b03ff",
+    measurementId: "G-XTYZCTBPZM"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Contact form with Firebase
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const name = this.querySelector('input[type="text"]').value;
+      const email = this.querySelector('input[type="email"]').value;
+      const message = this.querySelector('textarea').value;
+      
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      try {
+        // Save to Firebase
+        await addDoc(collection(db, 'contacts'), {
+          name: name,
+          email: email,
+          message: message,
+          timestamp: serverTimestamp()
+        });
+        
+        alert('Thank you for your message! I\'ll get back to you soon.');
+        this.reset();
+        
+      } catch (error) {
+        alert('Sorry, there was an error. Please try again.');
+        console.error('Firebase error:', error);
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
+</script>
 </body>
 </html>
