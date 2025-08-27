@@ -38,30 +38,80 @@ themeButtons.forEach(btn => {
     });
 });
 
+// Color Theme Picker - FIXED VERSION
+const colorPickerBtn = document.getElementById('color-picker-btn');
+const themePicker = document.getElementById('theme-picker');
+const themeButtons = document.querySelectorAll('.theme-btn');
+
+// Show/hide theme picker
+colorPickerBtn.addEventListener('click', () => {
+    const currentRight = themePicker.style.right;
+    themePicker.style.right = currentRight === '0px' ? '-35px' : '0px';
+});
+
+// Change theme colors
+themeButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event bubbling
+
+        const theme = btn.getAttribute('data-theme');
+        changeThemeColor(theme);
+
+        // Hide picker after selection
+        themePicker.style.right = '-35px';
+    });
+});
+
 function changeThemeColor(theme) {
     const root = document.documentElement;
-    
+
     const themes = {
-        blue: { primary: '#2563eb', secondary: '#1e40af', accent: '#3b82f6' },
-        green: { primary: '#16a34a', secondary: '#15803d', accent: '#22c55e' },
-        purple: { primary: '#9333ea', secondary: '#7c3aed', accent: '#a855f7' },
-        red: { primary: '#dc2626', secondary: '#b91c1c', accent: '#ef4444' },
-        orange: { primary: '#ea580c', secondary: '#c2410c', accent: '#f97316' }
+        blue: {
+            primary: '#2563eb',
+            secondary: '#1e40af',
+            accent: '#3b82f6'
+        },
+        green: {
+            primary: '#16a34a',
+            secondary: '#15803d',
+            accent: '#22c55e'
+        },
+        purple: {
+            primary: '#9333ea',
+            secondary: '#7c3aed',
+            accent: '#a855f7'
+        },
+        red: {
+            primary: '#dc2626',
+            secondary: '#b91c1c',
+            accent: '#ef4444'
+        },
+        orange: {
+            primary: '#ea580c',
+            secondary: '#c2410c',
+            accent: '#f97316'
+        }
     };
-    
+
     const colors = themes[theme] || themes.blue;
-    
+
     root.style.setProperty('--primary-color', colors.primary);
     root.style.setProperty('--secondary-color', colors.secondary);
     root.style.setProperty('--accent-color', colors.accent);
-    
+
+    // Save to localStorage
     localStorage.setItem('themeColor', theme);
 }
 
 // Load saved theme color
-const savedThemeColor = localStorage.getItem('themeColor');
-if (savedThemeColor) {
-    changeThemeColor(savedThemeColor);
+document.addEventListener('DOMContentLoaded', function() {
+    const savedThemeColor = localStorage.getItem('themeColor');
+    if (savedThemeColor) {
+        changeThemeColor(savedThemeColor);
+    }
+});
+
+
 }
 
 // Smooth Scrolling for Navigation
