@@ -22,22 +22,6 @@ function updateToggleButton(theme) {
     themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
 }
 
-// Color Theme Picker
-const colorPickerBtn = document.getElementById('color-picker-btn');
-const themePicker = document.getElementById('theme-picker');
-const themeButtons = document.querySelectorAll('.theme-btn');
-
-colorPickerBtn.addEventListener('click', () => {
-    themePicker.style.right = themePicker.style.right === '0px' ? '-35px' : '0px';
-});
-
-themeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const themeColor = btn.getAttribute('data-theme');
-        changeThemeColor(themeColor);
-    });
-});
-
 // Color Theme Picker - FIXED VERSION
 const colorPickerBtn = document.getElementById('color-picker-btn');
 const themePicker = document.getElementById('theme-picker');
