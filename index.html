@@ -12,26 +12,29 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-    <div class="logo-icon">
-        <div class="logo-base">
-            <div class="letter-i">I</div>
-            <div class="letter-d">D</div>
-        </div>
-        <div class="tech-glow"></div>
-    </div>
-    <div class="logo-text">
-        IDDEVELOPER
-        <span class="logo-tagline">Beyond Code</span>
-    </div>
-</a>
+                <div class="logo-icon">
+                    <div class="logo-base">
+                        <div class="letter-i">I</div>
+                        <div class="letter-d">D</div>
+                    </div>
+                    <div class="tech-glow"></div>
+                </div>
+                <div class="logo-text">
+                    IDDEVELOPER
+                    <span class="logo-tagline">Beyond Code</span>
+                </div>
+            </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#courses">Courses</a></li>
+                <li><a href="#academy">Academy</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-buttons">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <button class="btn-outline">Login</button>
                 <button class="btn-primary">Sign Up</button>
             </div>
@@ -42,11 +45,11 @@
     <section class="hero">
         <div class="hero-content">
             <h1>From <span class="highlight">Code</span> to <span class="highlight">Classroom</span></h1>
-            <p class="hero-tagline">Complete software solutions for businesses and aspiring developers</p>
-            <p>We build cutting-edge websites, applications, and games while teaching the next generation of African developers</p>
+            <p class="hero-tagline">Complete software solutions for businesses and learners</p>
+            <p>We build your digital products while teaching you the skills to build your own</p>
             <div class="hero-buttons">
-                <a href="#services" class="btn-primary">Our Services</a>
-                <a href="#courses" class="btn-outline">Explore Courses</a>
+                <a href="#services" class="btn-primary">Get Started</a>
+                <a href="#academy" class="btn-outline">Learn Skills</a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
@@ -69,7 +72,7 @@
     <section id="services" class="section">
         <div class="section-header">
             <h2>Our <span class="highlight">Services</span></h2>
-            <p>Comprehensive software solutions for your business needs</p>
+            <p>End-to-end software solutions for your business</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
@@ -83,7 +86,7 @@
                     <li>Business Websites</li>
                     <li>Portfolio Sites</li>
                 </ul>
-                <a href="#contact" class="service-link">Get Started →</a>
+                <a href="#contact" class="service-link">Get Quote →</a>
             </div>
 
             <div class="service-card">
@@ -93,11 +96,11 @@
                 <h3>App Development</h3>
                 <p>iOS, Android, and cross-platform mobile applications</p>
                 <ul class="service-features">
-                    <li>Native Apps</li>
-                    <li>Hybrid Apps</li>
-                    <li>UI/UX Design</li>
+                    <li>Native iOS/Android</li>
+                    <li>React Native</li>
+                    <li>Flutter Apps</li>
                 </ul>
-                <a href="#contact" class="service-link">Get Started →</a>
+                <a href="#contact" class="service-link">Get Quote →</a>
             </div>
 
             <div class="service-card">
@@ -109,9 +112,9 @@
                 <ul class="service-features">
                     <li>2D/3D Games</li>
                     <li>Mobile Games</li>
-                    <li>VR/AR Experiences</li>
+                    <li>Unity Development</li>
                 </ul>
-                <a href="#contact" class="service-link">Get Started →</a>
+                <a href="#contact" class="service-link">Get Quote →</a>
             </div>
 
             <div class="service-card">
@@ -119,22 +122,52 @@
                     <i class="fas fa-cogs"></i>
                 </div>
                 <h3>Custom Software</h3>
-                <p>Tailored solutions for your unique business requirements</p>
+                <p>Tailored solutions for your unique business needs</p>
                 <ul class="service-features">
                     <li>Database Systems</li>
-                    <li>API Integrations</li>
+                    <li>API Integration</li>
                     <li>Automation Tools</li>
                 </ul>
-                <a href="#contact" class="service-link">Get Started →</a>
+                <a href="#contact" class="service-link">Get Quote →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academy Section -->
+    <section id="academy" class="section academy-section">
+        <div class="section-header">
+            <h2>Developer <span class="highlight">Academy</span></h2>
+            <p>Learn in-demand tech skills from industry experts</p>
+        </div>
+        <div class="academy-grid">
+            <div class="course-card">
+                <h3>Web Development Bootcamp</h3>
+                <p>Master HTML, CSS, JavaScript and modern frameworks</p>
+                <div class="course-price">₦25,000</div>
+                <a href="#signup" class="btn-outline">Enroll Now</a>
+            </div>
+
+            <div class="course-card">
+                <h3>Mobile App Development</h3>
+                <p>Build iOS and Android apps with React Native</p>
+                <div class="course-price">₦30,000</div>
+                <a href="#signup" class="btn-outline">Enroll Now</a>
+            </div>
+
+            <div class="course-card">
+                <h3>Game Development Course</h3>
+                <p>Create games with Unity and C#</p>
+                <div class="course-price">₦35,000</div>
+                <a href="#signup" class="btn-outline">Enroll Now</a>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section class="cta-section">
         <div class="cta-content">
             <h2>Ready to <span class="highlight">Transform</span> Your Business?</h2>
-            <p>Get a free consultation and project estimate today</p>
+            <p>Join 100+ satisfied clients who trust us with their software needs</p>
             <a href="#contact" class="btn-primary">Start Your Project</a>
         </div>
     </section>
@@ -143,46 +176,28 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <div class="gear-circle">
-                            <div class="gear-teeth">
-                                <div class="gear-tooth"></div>
-                                <div class="gear-tooth"></div>
-                                <div class="gear-tooth"></div>
-                                <div class="gear-tooth"></div>
-                            </div>
-                        </div>
-                        <div class="molecular-shape">
-                            <div class="molecular-inner"></div>
-                        </div>
-                    </div>
-                    <div class="logo-text">
-                        IDDEVELOPER
-                        <span class="logo-tagline">Software Solutions</span>
-                    </div>
-                </div>
-                <p>Transforming ideas into digital reality through innovative software solutions and education.</p>
+                <h4>IDDEVELOPER</h4>
+                <p>Complete software solutions for businesses and individuals</p>
             </div>
-
             <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
+                <h4>Services</h4>
+                <a href="#">Web Development</a>
+                <a href="#">App Development</a>
+                <a href="#">Game Development</a>
             </div>
-
             <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p><i class="fas fa-envelope"></i> contact@iddeveloper.com</p>
-                <p><i class="fas fa-phone"></i> +234 XXX XXX XXXX</p>
-                <p><i class="fas fa-map-marker-alt"></i> Nigeria</p>
+                <h4>Academy</h4>
+                <a href="#">Courses</a>
+                <a href="#">Pricing</a>
+                <a href="#">Resources</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📍 Nigeria</p>
+                <p>📧 info@iddeveloper.com</p>
+                <p>📞 +234 XXX XXXX XXX</p>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <p>&copy; 2024 IDDEVELOPER. All rights reserved.</p>
         </div>
