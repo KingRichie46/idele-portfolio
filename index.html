@@ -3,234 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idele Richmond - Software Engineer</title>
+    <title>IDDEVELOPER - Complete Software Solutions</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Color Theme Picker -->
-    <div id="theme-picker" class="theme-picker">
-        <button class="theme-btn" data-theme="blue" style="background: #2563eb;"></button>
-        <button class="theme-btn" data-theme="green" style="background: #16a34a;"></button>
-        <button class="theme-btn" data-theme="purple" style="background: #9333ea;"></button>
-        <button class="theme-btn" data-theme="red" style="background: #dc2626;"></button>
-        <button class="theme-btn" data-theme="orange" style="background: #ea580c;"></button>
-    </div>
-
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <h1 class="logo">Idele Richmond</h1>
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <div class="gear-circle">
+                        <div class="gear-teeth">
+                            <div class="gear-tooth"></div>
+                            <div class="gear-tooth"></div>
+                            <div class="gear-tooth"></div>
+                            <div class="gear-tooth"></div>
+                        </div>
+                    </div>
+                    <div class="molecular-shape">
+                        <div class="molecular-inner"></div>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    IDDEVELOPER
+                    <span class="logo-tagline">Software Solutions</span>
+                </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#work">My Work</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-buttons">
-                <button id="theme-toggle">🌙</button>
-                <button id="color-picker-btn" title="Change Theme Color">
-                    <i class="fas fa-palette"></i>
-                </button>
-                <button id="mobile-menu-btn" class="mobile-only">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button class="btn-outline">Login</button>
+                <button class="btn-primary">Sign Up</button>
             </div>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu-hidden">
-        <a href="#home">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#work">My Work</a>
-        <a href="#projects">Projects</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <section id="home" class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="hero-content">
-            <h2>Hello, I'm <span class="highlight">Idele Richmond</span></h2>
-            <p class="tagline">Software Engineer & Full-Stack Developer</p>
-            <p>I create responsive websites, mobile applications, and interactive games with a focus on user experience and clean code.</p>
+            <h1>From <span class="highlight">Code</span> to <span class="highlight">Classroom</span></h1>
+            <p class="hero-tagline">Complete software solutions for businesses and aspiring developers</p>
+            <p>We build cutting-edge websites, applications, and games while teaching the next generation of African developers</p>
             <div class="hero-buttons">
-                <a href="#work" class="btn primary">See My Work</a>
-                <a href="#contact" class="btn secondary">Get In Touch</a>
+                <a href="#services" class="btn-primary">Our Services</a>
+                <a href="#courses" class="btn-outline">Explore Courses</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Students Trained</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="section">
-        <h2 class="section-title">My Skills</h2>
-        <div class="skills-container">
-            <div class="skill">
-                <h3>Web Development</h3>
-                <div class="skill-bar">
-                    <div class="skill-level html">90%</div>
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="section-header">
+            <h2>Our <span class="highlight">Services</span></h2>
+            <p>Comprehensive software solutions for your business needs</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
                 </div>
+                <h3>Website Development</h3>
+                <p>Responsive, modern websites that convert visitors to customers</p>
+                <ul class="service-features">
+                    <li>E-commerce Solutions</li>
+                    <li>Business Websites</li>
+                    <li>Portfolio Sites</li>
+                </ul>
+                <a href="#contact" class="service-link">Get Started →</a>
             </div>
-            <div class="skill">
-                <h3>JavaScript</h3>
-                <div class="skill-bar">
-                    <div class="skill-level js">85%</div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
                 </div>
+                <h3>App Development</h3>
+                <p>iOS, Android, and cross-platform mobile applications</p>
+                <ul class="service-features">
+                    <li>Native Apps</li>
+                    <li>Hybrid Apps</li>
+                    <li>UI/UX Design</li>
+                </ul>
+                <a href="#contact" class="service-link">Get Started →</a>
             </div>
-            <div class="skill">
-                <h3>UI/UX Design</h3>
-                <div class="skill-bar">
-                    <div class="skill-level ui">80%</div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-gamepad"></i>
                 </div>
-            </div>
-            <div class="skill">
                 <h3>Game Development</h3>
-                <div class="skill-bar">
-                    <div class="skill-level game">75%</div>
+                <p>Engaging games for web, mobile, and desktop platforms</p>
+                <ul class="service-features">
+                    <li>2D/3D Games</li>
+                    <li>Mobile Games</li>
+                    <li>VR/AR Experiences</li>
+                </ul>
+                <a href="#contact" class="service-link">Get Started →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cogs"></i>
                 </div>
+                <h3>Custom Software</h3>
+                <p>Tailored solutions for your unique business requirements</p>
+                <ul class="service-features">
+                    <li>Database Systems</li>
+                    <li>API Integrations</li>
+                    <li>Automation Tools</li>
+                </ul>
+                <a href="#contact" class="service-link">Get Started →</a>
             </div>
         </div>
     </section>
 
-    <section id="work" class="section">
-        <h2 class="section-title">My Work</h2>
-        <div class="gallery-container">
-            <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Websites</button>
-                <button class="filter-btn" data-filter="app">Apps</button>
-                <button class="filter-btn" data-filter="game">Games</button>
-                <button class="filter-btn" data-filter="design">Designs</button>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="web">
-                    <img src="https://placehold.co/400x300/2563eb/white?text=Website+Project" alt="Website Project">
-                    <div class="gallery-overlay">
-                        <h3>E-Commerce Site</h3>
-                        <p>Full online store with payment system</p>
-                        <a href="#" class="gallery-link">View Project</a>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="app">
-                    <img src="https://placehold.co/400x300/16a34a/white?text=Mobile+App" alt="Mobile App">
-                    <div class="gallery-overlay">
-                        <h3>Fitness App</h3>
-                        <p>Workout tracking application</p>
-                        <a href="#" class="gallery-link">View Project</a>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="game">
-                    <img src="https://placehold.co/400x300/9333ea/white?text=Game+Project" alt="Game Project">
-                    <div class="gallery-overlay">
-                        <h3>2D Platformer</h3>
-                        <p>Unity game with multiple levels</p>
-                        <a href="#" class="gallery-link">View Project</a>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="design">
-                    <img src="https://placehold.co/400x300/dc2626/white?text=UI+Design" alt="UI Design">
-                    <div class="gallery-overlay">
-                        <h3>UI Design</h3>
-                        <p>Modern dashboard design</p>
-                        <a href="#" class="gallery-link">View Project</a>
-                    </div>
-                </div>
-            </div>
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to <span class="highlight">Transform</span> Your Business?</h2>
+            <p>Get a free consultation and project estimate today</p>
+            <a href="#contact" class="btn-primary">Start Your Project</a>
         </div>
     </section>
 
-    <section id="projects" class="section">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>E-Commerce Platform</h3>
-                <p>Full-stack online store with payment integration and admin dashboard.</p>
-                <div class="tech-tags">
-                    <span>React</span>
-                    <span>Node.js</span>
-                    <span>MongoDB</span>
-                </div>
-                <a href="#" class="project-link">View Project →</a>
-            </div>
-            <div class="project-card">
-                <h3>Fitness Tracking App</h3>
-                <p>Mobile application for workout planning and progress tracking.</p>
-                <div class="tech-tags">
-                    <span>React Native</span>
-                    <span>Firebase</span>
-                    <span>Redux</span>
-                </div>
-                <a href="#" class="project-link">View Project →</a>
-            </div>
-            <div class="project-card">
-                <h3>2D Platformer Game</h3>
-                <p>Interactive game built with Unity and C# with multiple levels.</p>
-                <div class="tech-tags">
-                    <span>Unity</span>
-                    <span>C#</span>
-                    <span>Blender</span>
-                </div>
-                <a href="#" class="project-link">View Project →</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews" class="section">
-        <h2 class="section-title">Client Reviews</h2>
-        <div class="reviews-container">
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p>"Idele delivered an amazing website that exceeded our expectations. Professional and talented!"</p>
-                <div class="review-author">
-                    <strong>Sarah Johnson</strong>
-                    <span>CEO, Tech Solutions</span>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p>"The mobile app Idele developed for us is smooth, fast, and user-friendly. Highly recommended!"</p>
-                <div class="review-author">
-                    <strong>Michael Chen</strong>
-                    <span>Founder, FitnessApp</span>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★☆</div>
-                <p>"Great communication and delivered on time. Will definitely work with again for future projects."</p>
-                <div class="review-author">
-                    <strong>Emily Davis</strong>
-                    <span>Marketing Director</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2 class="section-title">Get In Touch</h2>
-        <form netlify name="contact" method="POST" id="contact-form" class="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit" class="btn primary">Send Message</button>
-</form>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 Idele Richmond. Built with passion and code.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="footer-section">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <div class="gear-circle">
+                            <div class="gear-teeth">
+                                <div class="gear-tooth"></div>
+                                <div class="gear-tooth"></div>
+                                <div class="gear-tooth"></div>
+                                <div class="gear-tooth"></div>
+                            </div>
+                        </div>
+                        <div class="molecular-shape">
+                            <div class="molecular-inner"></div>
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        IDDEVELOPER
+                        <span class="logo-tagline">Software Solutions</span>
+                    </div>
+                </div>
+                <p>Transforming ideas into digital reality through innovative software solutions and education.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> contact@iddeveloper.com</p>
+                <p><i class="fas fa-phone"></i> +234 XXX XXX XXXX</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nigeria</p>
             </div>
         </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 IDDEVELOPER. All rights reserved.</p>
+        </div>
     </footer>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script src="script.js"></script>
 </body>
