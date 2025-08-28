@@ -446,4 +446,102 @@ footer {
     .academy-grid {
         grid-template-columns: 1fr;
     }
+/* ===== IMPRESSIVE ID LOGO ===== */
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-base {
+    position: relative;
+    z-index: 2;
+}
+
+.letter-i {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--blood-red);
+    text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+    transform: skew(-5deg);
+    position: absolute;
+    top: 5px;
+    left: 12px;
+}
+
+.letter-d {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--pure-white);
+    background: var(--blood-red);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.7);
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.tech-glow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--blood-red);
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(8px);
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+.tech-circuits {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--blood-red);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: rotate 10s linear infinite;
+}
+
+.circuit-node {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--blood-red);
+    border-radius: 50%;
+}
+
+.circuit-node:nth-child(1) { top: 5px; left: 50%; }
+.circuit-node:nth-child(2) { top: 50%; right: 5px; }
+.circuit-node:nth-child(3) { bottom: 5px; left: 50%; }
+.circuit-node:nth-child(4) { top: 50%; left: 5px; }
+
+@keyframes pulse {
+    from { opacity: 0.2; transform: scale(0.9); }
+    to { opacity: 0.4; transform: scale(1.1); }
+}
+
+/* Dark theme support */
+[data-theme="dark"] .letter-i {
+    color: #ff4444;
+    text-shadow: 0 0 15px rgba(255, 68, 68, 0.7);
+}
+
+[data-theme="dark"] .letter-d {
+    color: #ffffff;
+    background: #ff4444;
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.8);
+}
+
+[data-theme="dark"] .tech-glow {
+    background: #ff4444;
+    opacity: 0.4;
 }
