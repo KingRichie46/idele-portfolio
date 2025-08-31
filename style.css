@@ -1,31 +1,28 @@
-/* ===== CSS VARIABLES ===== */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
-    --accent-color: #3b82f6;
     --text-color: #1f2937;
     --bg-color: #ffffff;
     --card-bg: #f8fafc;
     --border-color: #e2e8f0;
-    --success-color: #22c55e;
-    --error-color: #ef4444;
+    --whatsapp-green: #25D366;
+    --whatsapp-dark-green: #128C7E;
 }
 
 [data-theme="dark"] {
     --primary-color: #3b82f6;
     --secondary-color: #2563eb;
-    --accent-color: #60a5fa;
     --text-color: #f1f5f9;
     --bg-color: #0f172a;
     --card-bg: #1e293b;
     --border-color: #334155;
-}
-
-/* ===== BASE STYLES ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -36,41 +33,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* ===== THEME PICKER ===== */
-.theme-picker {
-    position: fixed;
-    top: 50%;
-    right: -35px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    background: var(--card-bg);
-    border-radius: 20px 0 0 20px;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-    z-index: 999;
-    transition: right 0.3s ease;
-}
-
-.theme-picker:hover {
-    right: 0;
-}
-
-.theme-btn {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: 2px solid white;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.theme-btn:hover {
-    transform: scale(1.2);
-}
-
-/* ===== NAVIGATION ===== */
+/* Navigation */
 nav {
     background: var(--card-bg);
     padding: 1rem 0;
@@ -113,28 +76,15 @@ nav {
     color: var(--primary-color);
 }
 
-.nav-buttons {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-#theme-toggle, #color-picker-btn {
+#theme-toggle {
     background: none;
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
     color: var(--text-color);
-    padding: 0.5rem;
-    border-radius: 5px;
-    transition: background 0.3s ease;
 }
 
-#theme-toggle:hover, #color-picker-btn:hover {
-    background: var(--border-color);
-}
-
-/* ===== HERO SECTION ===== */
+/* Hero Section */
 .hero {
     padding: 8rem 2rem 4rem;
     text-align: center;
@@ -180,8 +130,16 @@ nav {
 }
 
 .btn.primary {
-    background: white;
-    color: var(--primary-color);
+    background: var(--whatsapp-green);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn.primary:hover {
+    background: var(--whatsapp-dark-green);
+    transform: translateY(-2px);
 }
 
 .btn.secondary {
@@ -194,7 +152,7 @@ nav {
     transform: translateY(-2px);
 }
 
-/* ===== SECTIONS ===== */
+/* Sections */
 .section {
     padding: 4rem 2rem;
     max-width: 1200px;
@@ -208,7 +166,7 @@ nav {
     color: var(--primary-color);
 }
 
-/* ===== SKILLS ===== */
+/* Skills */
 .skills-container {
     display: grid;
     gap: 1.5rem;
@@ -252,83 +210,7 @@ nav {
 .ui { width: 80%; }
 .game { width: 75%; }
 
-/* ===== GALLERY STYLES ===== */
-.gallery-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gallery-filter {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.filter-btn {
-    padding: 0.5rem 1.5rem;
-    border: 2px solid var(--primary-color);
-    background: transparent;
-    color: var(--text-color);
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.gallery-item {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    color: white;
-    padding: 1.5rem;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
-}
-
-.gallery-link {
-    color: #ffd700;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* ===== PROJECTS ===== */
+/* Projects */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -370,41 +252,7 @@ nav {
     font-weight: bold;
 }
 
-/* ===== REVIEWS STYLES ===== */
-.reviews-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.review-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border-left: 4px solid var(--primary-color);
-}
-
-.review-stars {
-    color: #ffd700;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.review-author {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
-}
-
-.review-author strong {
-    display: block;
-    color: var(--primary-color);
-}
-
-/* ===== CONTACT FORM ===== */
+/* Contact Form */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -425,7 +273,7 @@ nav {
     margin-top: 1rem;
 }
 
-/* ===== FOOTER ===== */
+/* Footer */
 footer {
     background: var(--card-bg);
     text-align: center;
@@ -433,92 +281,14 @@ footer {
     margin-top: 4rem;
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.social-links {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.social-links a {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--primary-color);
-}
-
-/* ===== BACK TO TOP BUTTON ===== */
-.back-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-}
-
-.back-to-top.visible {
-    opacity: 1;
-}
-
-/* ===== MOBILE MENU ===== */
-.mobile-only {
-    display: none;
-}
-
-.mobile-menu-hidden {
-    display: none;
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
+/* Responsive */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
     }
     
-    .mobile-only {
-        display: block;
-    }
-    
-    .mobile-menu-hidden {
-        display: none;
-    }
-    
-    .mobile-menu-visible {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--card-bg);
-        padding: 1rem;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        z-index: 999;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .reviews-container {
-        grid-template-columns: 1fr;
+    .hero h2 {
+        font-size: 2rem;
     }
     
     .hero-buttons {
@@ -526,15 +296,7 @@ footer {
         align-items: center;
     }
     
-    .hero h2 {
-        font-size: 2rem;
-    }
-    
-    .section {
-        padding: 3rem 1rem;
-    }
-    
-    .theme-picker {
-        display: none;
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 }
