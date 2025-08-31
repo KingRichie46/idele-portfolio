@@ -2,7 +2,6 @@
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Check for saved theme preference
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
     body.setAttribute('data-theme', savedTheme);
@@ -22,49 +21,7 @@ function updateToggleButton(theme) {
     themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
 }
 
-// Color Theme Picker
-const colorPickerBtn = document.getElementById('color-picker-btn');
-const themePicker = document.getElementById('theme-picker');
-const themeButtons = document.querySelectorAll('.theme-btn');
-
-colorPickerBtn.addEventListener('click', () => {
-    themePicker.style.right = themePicker.style.right === '0px' ? '-35px' : '0px';
-});
-
-themeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const themeColor = btn.getAttribute('data-theme');
-        changeThemeColor(themeColor);
-    });
-});
-
-function changeThemeColor(theme) {
-    const root = document.documentElement;
-    
-    const themes = {
-        blue: { primary: '#2563eb', secondary: '#1e40af', accent: '#3b82f6' },
-        green: { primary: '#16a34a', secondary: '#15803d', accent: '#22c55e' },
-        purple: { primary: '#9333ea', secondary: '#7c3aed', accent: '#a855f7' },
-        red: { primary: '#dc2626', secondary: '#b91c1c', accent: '#ef4444' },
-        orange: { primary: '#ea580c', secondary: '#c2410c', accent: '#f97316' }
-    };
-    
-    const colors = themes[theme] || themes.blue;
-    
-    root.style.setProperty('--primary-color', colors.primary);
-    root.style.setProperty('--secondary-color', colors.secondary);
-    root.style.setProperty('--accent-color', colors.accent);
-    
-    localStorage.setItem('themeColor', theme);
-}
-
-// Load saved theme color
-const savedThemeColor = localStorage.getItem('themeColor');
-if (savedThemeColor) {
-    changeThemeColor(savedThemeColor);
-}
-
-// Smooth Scrolling for Navigation
+// Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -78,69 +35,94 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Mobile Menu
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('mobile-menu-hidden');
-    mobileMenu.classList.toggle('mobile-menu-visible');
-});
-
-// Gallery Filter
-const filterButtons = document.querySelectorAll('.filter-btn');
-const galleryItems = document.querySelectorAll('.gallery-item');
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        
-        // Add active class to clicked button
-        button.classList.add('active');
-        
-        // Get filter value
-        const filterValue = button.getAttribute('data-filter');
-        
-        // Filter gallery items
-        galleryItems.forEach(item => {
-            const category = item.getAttribute('data-category');
-            
-            if (filterValue === 'all' || filterValue === category) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
+// Enhanced Animations on Page Load
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Site loaded with animations! 🎉');
+    
+    // Typewriter effect for hero text
+    const heroText = document.querySelector('.hero-content h2');
+    if (heroText) {
+        heroText.style.animation = 'typewriter 2s steps(20) 1s both, blink 0.8s infinite';
+    }
+    
+    // Scroll animations
+    const animateOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, 100);
             }
         });
+    }, { threshold: 0.1 });
+    
+    // Observe all animate-on-scroll elements
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        animateOnScroll.observe(el);
     });
-});
-
-// Back to Top Button
-const backToTopBtn = document.getElementById('back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        backToTopBtn.classList.add('visible');
-    } else {
-        backToTopBtn.classList.remove('visible');
+    
+    // Floating effect for WhatsApp button
+    const whatsappBtn = document.querySelector('.btn.primary');
+    if (whatsappBtn) {
+        setInterval(() => {
+            whatsappBtn.style.transform = 'translateY(-5px)';
+            setTimeout(() => {
+                whatsappBtn.style.transform = 'translateY(0)';
+            }, 500);
+        }, 2000);
     }
 });
 
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Simple contact form
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your message! I\'ll get back to you soon.');
+// Enhanced WhatsApp Integration with Animations
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('user-name').value;
+    const email = document.getElementById('user-email').value;
+    const message = document.getElementById('user-message').value;
+    
+    // Animate button while processing
+    const submitBtn = this.querySelector('button');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+    
+    setTimeout(() => {
+        // CUSTOMIZED WHATSAPP MESSAGE
+        const whatsappText = 
+            `👨💻 *NEW PORTFOLIO MESSAGE* 👨💻%0A%0A` +
+            `*From:* ${name}%0A` +
+            `*Email:* ${email}%0A%0A` +
+            `*Message:*%0A${message}%0A%0A` +
+            `*Time:* ${new Date().toLocaleString()}%0A` +
+            `*Portfolio:* idelerichmond.netlify.app%0A%0A` +
+            `💡 *Quick Reply:*%0A` +
+            `Hello ${name.split(' ')[0]}! Thanks for checking out my portfolio. I'll get back to you shortly.`;
+        
+        // Your number
+        const yourNumber = '2348149357007';
+        
+        // Open WhatsApp
+        const newWindow = window.open(`https://wa.me/${yourNumber}?text=${whatsappText}`, '_blank');
+        
+        // Success animation
+        if (newWindow) {
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+            submitBtn.style.background = '#25D366';
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+            }, 2000);
+        } else {
+            // If window didn't open, reset button
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            alert('Please allow pop-ups for WhatsApp to open.');
+        }
+        
+        // Reset form
         this.reset();
-    });
-}
-
-console.log("Website loaded successfully!");
+    }, 1000);
+});
