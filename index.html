@@ -3,60 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDDEVELOPER - Software Engineer</title>
+    <title>Idele Richmond - Software Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Color Theme Picker -->
-    <div id="theme-picker" class="theme-picker">
-        <button class="theme-btn" data-theme="blue" style="background: #2563eb;"></button>
-        <button class="theme-btn" data-theme="green" style="background: #16a34a;"></button>
-        <button class="theme-btn" data-theme="purple" style="background: #9333ea;"></button>
-        <button class="theme-btn" data-theme="red" style="background: #dc2626;"></button>
-        <button class="theme-btn" data-theme="orange" style="background: #ea580c;"></button>
-    </div>
-
     <nav>
         <div class="nav-container">
             <h1 class="logo">Idele Richmond</h1>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#work">My Work</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="nav-buttons">
-                <button id="theme-toggle">🌙</button>
-                <button id="color-picker-btn" title="Change Theme Color">
-                    <i class="fas fa-palette"></i>
-                </button>
-                <button id="mobile-menu-btn" class="mobile-only">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+            <button id="theme-toggle">🌙</button>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu-hidden">
-        <a href="#home">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#work">My Work</a>
-        <a href="#projects">Projects</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-    </div>
-
     <section id="home" class="hero">
         <div class="hero-content">
-            <h2>Hello, I'm <span class="highlight">IDDEVELOPER</span></h2>
+            <h2>Hello, I'm <span class="highlight">Idele Richmond</span></h2>
             <p class="tagline">Software Engineer & Full-Stack Developer</p>
             <p>I create responsive websites, mobile applications, and interactive games with a focus on user experience and clean code.</p>
             <div class="hero-buttons">
-                <a href="#work" class="btn primary">See My Work</a>
+                <a href="#projects" class="btn primary">View My Work</a>
                 <a href="#contact" class="btn secondary">Get In Touch</a>
             </div>
         </div>
@@ -87,53 +58,6 @@
                 <h3>Game Development</h3>
                 <div class="skill-bar">
                     <div class="skill-level game">75%</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="work" class="section">
-        <h2 class="section-title">My Work</h2>
-        <div class="gallery-container">
-            <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Websites</button>
-                <button class="filter-btn" data-filter="app">Apps</button>
-                <button class="filter-btn" data-filter="game">Games</button>
-                <button class="filter-btn" data-filter="design">Designs</button>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="web">
-                    <img src="https://placehold.co/400x300/2563eb/white?text=Website+Project" alt="Website Project">
-                    <div class="gallery-overlay">
-                        <h3>E-Commerce Site</h3>
-                        <p>Full online store with payment system</p>
-                        <a href="#" class="gallery-link">View Project</a>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="app">
-                    <img src="https://placehold.co/400x300/16a34a/white?text=Mobile+App" alt="Mobile App">
-                    <div class="gallery-overlay">
-                        <h3>Fitness App</h3>
-                        <p>Workout tracking application</p>
-                        <a href="#" class="gallery-link">View Project</a>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="game">
-                    <img src="https://placehold.co/400x300/9333ea/white?text=Game+Project" alt="Game Project">
-                    <div class="gallery-overlay">
-                        <h3>2D Platformer</h3>
-                        <p>Unity game with multiple levels</p>
-                        <a href="#" class="gallery-link">View Project</a>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="design">
-                    <img src="https://placehold.co/400x300/dc2626/white?text=UI+Design" alt="UI Design">
-                    <div class="gallery-overlay">
-                        <h3>UI Design</h3>
-                        <p>Modern dashboard design</p>
-                        <a href="#" class="gallery-link">View Project</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -175,63 +99,92 @@
         </div>
     </section>
 
-    <section id="reviews" class="section">
-        <h2 class="section-title">Client Reviews</h2>
-        <div class="reviews-container">
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p>"Idele delivered an amazing website that exceeded our expectations. Professional and talented!"</p>
-                <div class="review-author">
-                    <strong>Osasu David</strong>
-                    <span>CEO, Braincom</span>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p>"The mobile app Iddeveloper developed for us is smooth, fast, and user-friendly. Highly recommended!"</p>
-                <div class="review-author">
-                    <strong>Michael apkor</strong>
-                    <span>Founder, Miga Town</span>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★☆</div>
-                <p>"Great communication and delivered on time. Will definitely work with again for future projects."</p>
-                <div class="review-author">
-                    <strong>Emily Davis</strong>
-                    <span>Marketing Director</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contact" class="section">
         <h2 class="section-title">Get In Touch</h2>
         <form id="contact-form" class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="btn primary">Send Message</button>
+            <input type="text" id="user-name" placeholder="Your Name" required>
+            <input type="email" id="user-email" placeholder="Your Email" required>
+            <textarea id="user-message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn primary">
+                <i class="fab fa-whatsapp"></i> Send via WhatsApp
+            </button>
         </form>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Idele Richmond. Built with passion and code.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
+        <p>&copy; 2025 Idele Richmond. Built with passion and code.</p>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
 
-    <script src="script.js"></script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.setAttribute('data-theme', savedTheme);
+            updateToggleButton(savedTheme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleButton(newTheme);
+        });
+
+        function updateToggleButton(theme) {
+            themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // WhatsApp Integration - FOR IDELE RICHMOND PORTFOLIO
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('user-name').value;
+            const email = document.getElementById('user-email').value;
+            const message = document.getElementById('user-message').value;
+            
+            // CUSTOMIZED WHATSAPP MESSAGE
+            const whatsappText = 
+                `👨💻 *NEW PORTFOLIO MESSAGE* 👨💻%0A%0A` +
+                `*From:* ${name}%0A` +
+                `*Email:* ${email}%0A%0A` +
+                `*Message:*%0A${message}%0A%0A` +
+                `*Time:* ${new Date().toLocaleString()}%0A` +
+                `*Portfolio:* idelerichmond.netlify.app%0A%0A` +
+                `💡 *Quick Reply:*%0A` +
+                `Hello ${name.split(' ')[0]}! Thanks for checking out my portfolio. I'll get back to you shortly.`;
+            
+            // ✅ YOUR NUMBER FOR IDELE RICHMOND PORTFOLIO
+            const yourNumber = '2348149357007'; // 08149357007 → 2348149357007
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/${yourNumber}?text=${whatsappText}`, '_blank');
+            
+            // Show confirmation
+            alert('📱 Opening WhatsApp with your message...');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
 </body>
 </html>
