@@ -3,70 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDDEVELOPER - Software Engineer</title>
+    <title>IDDEVELOPER - Premier Software Development Company</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="IDDEVELOPER - 16-year-old Software Engineer & Full-Stack Developer. Building the future with code through modern web applications and projects.">
-    <meta name="keywords" content="young developer, software engineer, full-stack developer, web development, react, nodejs, portfolio, teenage programmer">
+    <meta name="description" content="IDDEVELOPER - Leading software development company founded by Idele Richmond. We build cutting-edge web applications, mobile apps, and enterprise solutions.">
+    <meta name="keywords" content="software development company, web development, mobile apps, enterprise solutions, react, nodejs, angular, vue">
     <meta name="author" content="IDDEVELOPER">
     <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="IDDEVELOPER - Premier Software Development Company">
+    <meta property="og:description" content="Leading software development company delivering exceptional digital solutions since 2022">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iddeveloper.com">
+    <meta property="og:image" content="https://iddeveloper.com/og-image.jpg">
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="progress-bar"></div>
+    </div>
+
     <nav>
         <div class="nav-container">
             <h1 class="logo">IDDEVELOPER</h1>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="theme-toggle">🌙</button>
+            <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         </div>
     </nav>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h2>Hello, I'm <span class="highlight">IDDEVELOPER</span></h2>
-            <p class="tagline">16-Year-Old Software Engineer & Full-Stack Developer</p>
-            <p>I create responsive websites, mobile applications, and interactive games while pursuing my Computer Science education. Passionate about learning and building the future with code.</p>
+            <h2>Transforming Ideas Into <span class="highlight">Digital Excellence</span></h2>
+            <p class="tagline">Premier Software Development Company</p>
+            <p>Founded by Idele Richmond, IDDEVELOPER brings together top-tier talent to deliver exceptional digital solutions. With a team of expert developers, designers, and strategists, we turn your vision into reality.</p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn primary">View My Work</a>
-                <a href="#achievements" class="btn secondary">My Journey</a>
-                <a href="#contact" class="btn resume">Get In Touch</a>
+                <a href="#projects" class="btn primary">Our Portfolio</a>
+                <a href="#contact" class="btn secondary">Start a Project</a>
+                <a href="#services" class="btn accent">Our Services</a>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="section">
-        <h2 class="section-title">My Skills</h2>
-        <div class="skills-container">
-            <div class="skill animate-on-scroll">
+    <section id="services" class="section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">💻</div>
                 <h3>Web Development</h3>
-                <div class="skill-bar">
-                    <div class="skill-level html" data-percent="90%">90%</div>
-                </div>
+                <p>Enterprise-grade web applications built with React, Angular, and Vue.js. Scalable, secure, and performance-optimized.</p>
             </div>
-            <div class="skill animate-on-scroll">
-                <h3>JavaScript</h3>
-                <div class="skill-bar">
-                    <div class="skill-level js" data-percent="85%">85%</div>
-                </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">📱</div>
+                <h3>Mobile Development</h3>
+                <p>Native and cross-platform mobile apps for iOS and Android. Flutter, React Native, and Swift expertise.</p>
             </div>
-            <div class="skill animate-on-scroll">
-                <h3>UI/UX Design</h3>
-                <div class="skill-bar">
-                    <div class="skill-level ui" data-percent="80%">80%</div>
-                </div>
-            </div>
-            <div class="skill animate-on-scroll">
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">🎮</div>
                 <h3>Game Development</h3>
-                <div class="skill-bar">
-                    <div class="skill-level game" data-percent="75%">75%</div>
-                </div>
+                <p>Immersive gaming experiences using Unity, Unreal Engine, and custom game development frameworks.</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">☁️</div>
+                <h3>Cloud Solutions</h3>
+                <p>AWS, Azure, and Google Cloud infrastructure setup, migration, and optimization for your business.</p>
             </div>
         </div>
     </section>
@@ -78,68 +86,68 @@
             <!-- Project 1: E-Commerce -->
             <div class="project-card animate-on-scroll">
                 <div class="project-header">
-                    <h3>E-Commerce Platform</h3>
-                    <span class="project-badge">Full Stack</span>
+                    <h3>ShopNaija Marketplace</h3>
+                    <span class="project-badge">E-Commerce</span>
                 </div>
-                <p>Full-stack online store with payment integration and admin dashboard built with modern technologies.</p>
+                <p>Complete e-commerce platform for Nigerian retailers with multi-vendor support, payment integration, and inventory management.</p>
                 <div class="tech-tags">
                     <span>React</span>
                     <span>Node.js</span>
                     <span>MongoDB</span>
-                    <span>Stripe</span>
+                    <span>Paystack</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://ecommerce-kingrichie46.netlify.app" target="_blank" class="btn demo">
-                        <i class="fas fa-store"></i> Live Store
+                    <a href="https://shopnaija.ng" target="_blank" class="btn demo">
+                        <i class="fas fa-store"></i> Live Platform
                     </a>
-                    <a href="https://github.com/KingRichie46" target="_blank" class="btn github">
-                        <i class="fab fa-github"></i> Code
+                    <a href="#" class="btn github">
+                        <i class="fas fa-eye"></i> Case Study
                     </a>
                 </div>
             </div>
 
-            <!-- Project 2: Fitness App -->
+            <!-- Project 2: Health App -->
             <div class="project-card animate-on-scroll">
                 <div class="project-header">
-                    <h3>Fitness Tracking App</h3>
-                    <span class="project-badge">Mobile</span>
+                    <h3>MediTrack NG</h3>
+                    <span class="project-badge">Healthcare</span>
                 </div>
-                <p>Mobile application for workout planning, progress tracking, and health monitoring with beautiful UI.</p>
+                <p>Healthcare management system for Nigerian hospitals with patient records, appointment scheduling, and telemedicine features.</p>
                 <div class="tech-tags">
                     <span>React Native</span>
                     <span>Firebase</span>
-                    <span>Redux</span>
-                    <span>Charts.js</span>
+                    <span>Node.js</span>
+                    <span>Twilio</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://fitness-app-kingrichie46.netlify.app" target="_blank" class="btn demo">
-                        <i class="fas fa-running"></i> App Demo
+                    <a href="https://meditrackng.com" target="_blank" class="btn demo">
+                        <i class="fas fa-mobile"></i> App Demo
                     </a>
-                    <a href="https://github.com/KingRichie46" target="_blank" class="btn github">
-                        <i class="fab fa-github"></i> Code
+                    <a href="#" class="btn github">
+                        <i class="fas fa-eye"></i> Case Study
                     </a>
                 </div>
             </div>
 
-            <!-- Project 3: Game -->
+            <!-- Project 3: FinTech -->
             <div class="project-card animate-on-scroll">
                 <div class="project-header">
-                    <h3>2D Platformer Game</h3>
-                    <span class="project-badge">Game Dev</span>
+                    <h3>KudiFlow Pro</h3>
+                    <span class="project-badge">FinTech</span>
                 </div>
-                <p>Interactive 2D game built with Unity featuring multiple levels, character customization, and smooth gameplay.</p>
+                <p>Advanced financial management platform for African businesses with multi-currency support and real-time analytics.</p>
                 <div class="tech-tags">
-                    <span>Unity</span>
-                    <span>C#</span>
-                    <span>Blender</span>
-                    <span>Photoshop</span>
+                    <span>Angular</span>
+                    <span>Python</span>
+                    <span>PostgreSQL</span>
+                    <span>Docker</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://platformer-game-kingrichie46.netlify.app" target="_blank" class="btn demo">
-                        <i class="fas fa-gamepad"></i> Play Game
+                    <a href="https://kudiflow.com" target="_blank" class="btn demo">
+                        <i class="fas fa-chart-line"></i> Live Demo
                     </a>
-                    <a href="https://github.com/KingRichie46" target="_blank" class="btn github">
-                        <i class="fab fa-github"></i> Code
+                    <a href="#" class="btn github">
+                        <i class="fas fa-eye"></i> Case Study
                     </a>
                 </div>
             </div>
@@ -147,58 +155,110 @@
         </div>
     </section>
 
-    <section id="achievements" class="section">
-        <h2 class="section-title">My Journey & Achievements</h2>
-        <div class="achievements-grid">
-            <div class="achievement-card animate-on-scroll">
-                <div class="achievement-icon">🚀</div>
-                <h3>Self-Taught Developer</h3>
-                <p>Mastered full-stack development through online courses, documentation, and building real projects from scratch.</p>
+    <section id="testimonials" class="section">
+        <h2 class="section-title">Client Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-content">
+                    <p>"IDDEVELOPER transformed our business with their ShopNaija platform. Their team's expertise in e-commerce solutions is unmatched in the Nigerian market."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Chinedu Okoro" class="author-image">
+                    <div class="author-info">
+                        <h4>Chinedu Okoro</h4>
+                        <p>CEO, NaijaRetail Group</p>
+                    </div>
+                </div>
             </div>
-            <div class="achievement-card animate-on-scroll">
-                <div class="achievement-icon">🎯</div>
-                <h3>University Student</h3>
-                <p>Currently pursuing Computer Science degree while maintaining a strong focus on practical, real-world skills.</p>
+
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-content">
+                    <p>"The MediTrack system revolutionized our hospital operations. IDDEVELOPER's understanding of healthcare technology needs is exceptional."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face" alt="Dr. Adeola Williams" class="author-image">
+                    <div class="author-info">
+                        <h4>Dr. Adeola Williams</h4>
+                        <p>Medical Director, Prime Hospital</p>
+                    </div>
+                </div>
             </div>
-            <div class="achievement-card animate-on-scroll">
-                <div class="achievement-icon">💻</div>
-                <h3>5+ Production Projects</h3>
-                <p>Built and deployed multiple full-stack applications using modern technologies and best practices.</p>
+
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-content">
+                    <p>"KudiFlow Pro streamlined our financial operations across multiple African countries. Professional, reliable, and truly innovative solutions."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Tunde Alabi" class="author-image">
+                    <div class="author-info">
+                        <h4>Tunde Alabi</h4>
+                        <p>Finance Director, Pan-African Ventures</p>
+                    </div>
+                </div>
             </div>
-            <div class="achievement-card animate-on-scroll">
-                <div class="achievement-icon">🌱</div>
-                <h3>Continuous Learner</h3>
-                <p>Committed to daily learning, exploring new technologies, and constantly improving my development skills.</p>
+
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-content">
+                    <p>"Working with Idele and his team was a game-changer. Their technical expertise and business acumen delivered beyond our expectations."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face" alt="Sarah Johnson" class="author-image">
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>COO, TechGrowth Africa</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="section">
-        <h2 class="section-title">Get In Touch</h2>
-        <form id="contact-form" class="contact-form">
-            <input type="text" id="user-name" placeholder="Your Name" required>
-            <input type="email" id="user-email" placeholder="Your Email" required>
-            <textarea id="user-message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="btn primary">
-                <i class="fab fa-whatsapp"></i> Send via WhatsApp
-            </button>
-        </form>
+        <h2 class="section-title">Start Your Project</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>Ready to transform your business? Let's discuss your project requirements.</p>
+                <div class="contact-details">
+                    <p><i class="fas fa-envelope"></i> hello@iddeveloper.com</p>
+                    <p><i class="fas fa-phone"></i> +234 814 935 7007</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
+                </div>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <input type="text" id="user-name" placeholder="Your Name" required>
+                <input type="email" id="user-email" placeholder="Your Email" required>
+                <input type="text" id="company" placeholder="Company Name">
+                <textarea id="user-message" placeholder="Project Requirements" rows="5" required></textarea>
+                <button type="submit" class="btn primary">
+                    <i class="fas fa-paper-plane"></i> Send Proposal Request
+                </button>
+            </form>
+        </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 IDDEVELOPER. Built with passion and code.</p>
-            <div class="social-links">
-                <a href="https://github.com/KingRichie46" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" target="_blank" aria-label="LinkedIn" style="opacity: 0.5;">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="#" target="_blank" aria-label="Twitter" style="opacity: 0.5;">
-                    <i class="fab fa-twitter"></i>
-                </a>
+            <div class="footer-section">
+                <h3>IDDEVELOPER</h3>
+                <p>Premier software development company delivering exceptional digital solutions since 2022.</p>
             </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <p>Web Development</p>
+                <p>Mobile Applications</p>
+                <p>Cloud Solutions</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 IDDEVELOPER. All rights reserved. Founded by Idele Richmond.</p>
         </div>
     </footer>
 
