@@ -1,236 +1,389 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDDEVELOPER | Enterprise Software Solutions</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IDDEVELOPER — Apple‑Tier Redesign</title>
+  <meta name="description" content="Premium software studio portfolio with cinematic scroll, Apple‑style motion, and enterprise credibility." />
+  <meta property="og:title" content="IDDEVELOPER — Premium Software Studio" />
+  <meta property="og:description" content="Cinematic scroll. Refined motion. Enterprise delivery." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --red-900:#8B0000; /* Primary Dark Red */
+      --red-700:#DC143C; /* Crimson */
+      --gold:#FFD700; /* Accent */
+      --ink:#0b0b10;  /* Almost black */
+      --paper:#ffffff; /* White */
+      --muted:#6b7280; /* Gray-500 */
+      --glass:rgba(255,255,255,.08);
+      --glass-stroke:rgba(255,255,255,.22);
+    }
+    /* Reset */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--paper); color:var(--ink);
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    }
+    /* Subtle premium noise/texture */
+    body::before{
+      content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
+      background:
+        radial-gradient(1200px 800px at 10% -10%, rgba(139,0,0,.10), transparent 60%),
+        radial-gradient(900px 600px at 110% 10%, rgba(220,20,60,.10), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.04), transparent 20%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.015"/></svg>');
+      background-size: auto, auto, auto, 200px 200px;
+    }
+    a{color:inherit; text-decoration:none}/* --- Navigation (Glass) --- */
+.nav{
+  position:fixed; top:16px; left:50%; transform:translateX(-50%);
+  width:min(1100px, 92vw); z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 16px; border-radius:18px;
+  backdrop-filter: saturate(180%) blur(14px);
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(0,0,0,.06);
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+.brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
+.brand-mark{
+  width:28px;height:28px;border-radius:9px; display:grid;place-items:center;
+  background:linear-gradient(135deg, var(--red-900), var(--red-700)); color:white; font-weight:800;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.25), 0 6px 16px rgba(139,0,0,.25);
+}
+.nav-links{display:flex; gap:18px; align-items:center}
+.nav a{opacity:.85}
+.btn{display:inline-flex; align-items:center; gap:10px; font-weight:700; padding:10px 16px; border-radius:12px; border:1px solid rgba(0,0,0,.08); transition:transform .2s ease, box-shadow .2s ease}
+.btn-primary{background:var(--ink); color:white; border-color:rgba(255,255,255,.06)}
+.btn-primary .dot{width:6px;height:6px;border-radius:999px;background:var(--gold)}
+.btn:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.12)}
+
+/* --- Hero --- */
+.hero{position:relative; min-height:100svh; display:grid; place-items:center; padding:120px 0 80px}
+.hero-inner{width:min(1100px, 92vw); display:grid; grid-template-columns: 1.2fr .8fr; gap:40px; align-items:center}
+.eyebrow{font-weight:800; letter-spacing:.16em; text-transform:uppercase; font-size:12px; color:var(--red-900)}
+h1{font-size: clamp(42px, 6vw, 84px); line-height:1.02; letter-spacing:-.02em; margin:12px 0 16px}
+.sub{font-size: clamp(16px, 1.6vw, 20px); color:#111827cc; max-width:56ch}
+
+.cta{display:flex; gap:12px; margin-top:26px; flex-wrap:wrap}
+.cta .ghost{background:transparent; border-color:rgba(0,0,0,.15)}
+
+/* Floating decorative orbs */
+.orb{position:absolute; filter:blur(40px); opacity:.35; border-radius:999px}
+.orb.red{background:radial-gradient(circle at 30% 30%, var(--red-700), var(--red-900)); width:380px; height:380px; top:16%; left:-80px}
+.orb.gold{background:radial-gradient(circle at 30% 30%, var(--gold), #b8860b); width:220px; height:220px; bottom:10%; right:8%}
+
+/* --- Stats --- */
+.stats{width:min(1100px, 92vw); margin:60px auto 0; display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+.stat{padding:18px 16px; border-radius:14px; background:rgba(255,255,255,.65); border:1px solid rgba(0,0,0,.06); backdrop-filter:saturate(160%) blur(8px); text-align:center}
+.stat .num{font-size:clamp(28px,3.3vw,40px); font-weight:900}
+.stat .label{color:var(--muted); font-weight:600; text-transform:uppercase; font-size:12px; letter-spacing:.12em}
+
+/* --- Sections --- */
+section{padding:120px 0}
+.container{width:min(1100px, 92vw); margin:0 auto}
+.section-head{display:flex; align-items:end; justify-content:space-between; margin-bottom:28px}
+.section-head h2{font-size: clamp(28px, 4.2vw, 52px); letter-spacing:-.02em; margin:0}
+.section-head p{max-width:60ch; color:#111827cc}
+
+/* --- Services --- */
+.services{display:grid; grid-template-columns:repeat(5, 1fr); gap:12px}
+.card{position:relative; padding:22px; border-radius:18px; background:linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,.55)); border:1px solid rgba(0,0,0,.08); overflow:hidden; transform-style:preserve-3d; will-change:transform}
+.card h3{margin:0 0 6px; font-size:18px}
+.card p{margin:0; color:#111827cc}
+.chip{position:absolute; top:12px; right:12px; padding:6px 10px; border-radius:999px; background:rgba(139,0,0,.08); color:var(--red-900); font-size:11px; font-weight:800; letter-spacing:.08em}
+
+/* --- Projects --- */
+.projects{display:grid; grid-template-columns:1.2fr .8fr; gap:14px}
+.project{position:relative; border-radius:20px; overflow:hidden; background:#0d0d10; color:white; min-height:300px; display:flex; align-items:flex-end}
+.project img, .project video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(1.02) contrast(1.02)}
+.project .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.0) 20%, rgba(0,0,0,.65) 100%);}
+.project .meta{position:relative; padding:18px}
+.tag{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.14); font-weight:700; font-size:11px; letter-spacing:.08em}
+
+/* --- Testimonials --- */
+.testis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+.t{padding:22px; border-radius:18px; background:linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,.55)); border:1px solid rgba(0,0,0,.08)}
+.t p{margin:0 0 12px}
+.t .who{display:flex; align-items:center; gap:10px}
+.avatar{width:36px; height:36px; border-radius:999px; background:linear-gradient(135deg, #eee, #ccc)}
+
+/* --- Contact --- */
+.contact{display:grid; grid-template-columns:1.1fr .9fr; gap:18px}
+.form{padding:22px; border-radius:18px; background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.65)); border:1px solid rgba(0,0,0,.08)}
+.form-row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+label{display:block; font-size:12px; text-transform:uppercase; letter-spacing:.12em; font-weight:800; color:var(--muted)}
+input, textarea{width:100%; padding:14px 14px; border-radius:12px; border:1px solid rgba(0,0,0,.12); background:#fff; font:inherit}
+textarea{min-height:140px; resize:vertical}
+
+/* --- Footer --- */
+footer{padding:32px 0 80px; color:#111827cc}
+.footer-inner{width:min(1100px, 92vw); margin:0 auto; display:flex; justify-content:space-between; align-items:center}
+
+/* --- Responsive --- */
+@media (max-width:1100px){
+  .hero-inner{grid-template-columns:1fr}
+  .projects{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr}
+  .services{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .services{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *{animation: none !important; transition:none !important}
+}
+
+  </style>
 </head>
 <body>
-    <!-- Wallpaper Background -->
-    <div class="wallpaper-bg"></div>
-    
-    <!-- Navigation -->
-    <nav class="glass-nav">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <h1 class="logo">IDDEVELOPER</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#clients">Clients</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button id="theme-toggle" class="theme-btn">🌙</button>
-                <a href="#contact" class="btn primary-btn">BOOK A MEETING</a>
-            </div>
+  <!-- Nav -->
+  <nav class="nav" aria-label="Primary">
+    <div class="brand"><span class="brand-mark">ID</span> IDDEVELOPER</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="#contact"><span class="dot"></span> Book a Meeting</a>
+    </div>
+  </nav>  <!-- Hero -->  <header class="hero" id="home" data-stagger>
+    <div class="orb red" data-parallax data-speed="-0.15"></div>
+    <div class="orb gold" data-parallax data-speed="0.22"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Enterprise Software. Boutique Craft.</div>
+        <h1><span class="em">Build what Fortune‑grade teams ship.</span><br/>Cinematic web, mobile & platforms.</h1>
+        <p class="sub">We architect mission‑critical software with premium UX and Apple‑level polish. Web, mobile, and custom platforms—delivered with discipline.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact"><span class="dot"></span> Book a Meeting</a>
+          <a class="btn ghost" href="tel:+2348000000000">Call Us Today</a>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">WE ARE A</div>
-                <h1>leading tech firm specializing in <span class="accent-text">enterprise software</span>, custom solutions, and innovative design.</h1>
-                <div class="hero-actions">
-                    <a href="tel:+2348149357007" class="btn primary-btn">
-                        <i class="fas fa-phone"></i> CALL US TODAY
-                    </a>
-                    <a href="#contact" class="btn secondary-btn">
-                        <i class="fas fa-calendar"></i> BOOK A MEETING
-                    </a>
-                </div>
-                <div class="scroll-indicator">
-                    <span>SCROLL DOWN</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
+        <div class="stats" aria-label="Studio stats">
+          <div class="stat"><div class="num" data-count="180">0</div><div class="label">Projects</div></div>
+          <div class="stat"><div class="num" data-count="158">0</div><div class="label">Clients</div></div>
+          <div class="stat"><div class="num" data-count="15">0</div><div class="label">Awards</div></div>
+          <div class="stat"><div class="num" data-count="22">0</div><div class="label">Brands</div></div>
         </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">180</span>
-                    <span class="stat-label">Projects Completed</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">158</span>
-                    <span class="stat-label">Happy Clients</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">15</span>
-                    <span class="stat-label">Awards Received</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">22</span>
-                    <span class="stat-label">Publication Brands</span>
-                </div>
-            </div>
+      </div>
+      <div>
+        <!-- Placeholder showcase frame -->
+        <div class="project" style="min-height:520px" data-tilt>
+          <img alt="Project showcase" src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1400&auto=format&fit=crop"/>
+          <div class="overlay"></div>
+          <div class="meta">
+            <span class="tag">Flagship</span>
+            <h3 style="margin:8px 0 4px">MatchOrbit — Trading Intelligence</h3>
+            <p style="margin:0; opacity:.9">High‑frequency insights with realtime dashboards and multi‑tenant architecture.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 class="section-title">WHAT WE DO</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Web Development</h3>
-                    <p>Custom websites tailored to your business needs, ensuring high performance, reliability, and a seamless user experience.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Mobile App Development</h3>
-                    <p>Develop robust mobile applications with intuitive interfaces and advanced functionalities to engage your users effectively.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Custom Software</h3>
-                    <p>Design and scalable software solutions tailored to meet the specific needs of your business.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Innovative Web Design</h3>
-                    <p>Design engaging and modern websites that enhance user experience and boost online presence.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Support & Maintenance</h3>
-                    <p>Provide continuous support and maintenance to ensure your applications remain up-to-date and efficient.</p>
-                </div>
-            </div>
+      </div>
+    </div>
+  </header>  <!-- Services -->  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>What we do — with unreasonable polish</h2>
+        <p>From greenfield to scale‑up, we ship end‑to‑end solutions with measurable outcomes and premium UX.</p>
+      </div>
+      <div class="services">
+        <article class="card" data-tilt>
+          <div class="chip">Core</div>
+          <h3>Web Platforms</h3>
+          <p>React, Next.js, Node. Secure, observable, and fast.</p>
+        </article>
+        <article class="card" data-tilt>
+          <div class="chip">Mobile</div>
+          <h3>iOS & Android</h3>
+          <p>Native‑feel apps with offline‑first data layers.</p>
+        </article>
+        <article class="card" data-tilt>
+          <div class="chip">Custom</div>
+          <h3>Software Engineering</h3>
+          <p>APIs, microservices, data pipelines, integrations.</p>
+        </article>
+        <article class="card" data-tilt>
+          <div class="chip">Design</div>
+          <h3>Product & Brand</h3>
+          <p>Design systems, micro‑interactions, accessibility.</p>
+        </article>
+        <article class="card" data-tilt>
+          <div class="chip" style="background:rgba(255,215,0,.16); color:#8a6d00">Care</div>
+          <h3>Support & DevOps</h3>
+          <p>SLAs, CI/CD, monitoring, incident response.</p>
+        </article>
+      </div>
+    </div>
+  </section>  <!-- Projects -->  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Selected work — narrative reveals</h2>
+        <p>Hover to preview. Scroll for story. We’ll swap in your actual assets before launch.</p>
+      </div>
+      <div class="projects">
+        <a class="project" href="#" data-tilt>
+          <img alt="CityLiving" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop"/>
+          <div class="overlay"></div>
+          <div class="meta">
+            <span class="tag">CityLiving</span>
+            <h3>Real‑estate platform with dynamic pricing</h3>
+          </div>
+        </a>
+        <a class="project" href="#" data-tilt>
+          <img alt="BillboardConnect" src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1400&auto=format&fit=crop"/>
+          <div class="overlay"></div>
+          <div class="meta">
+            <span class="tag">BillboardConnect</span>
+            <h3>Out‑of‑home ad inventory, realtime</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>  <!-- Testimonials -->  <section id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <h2>Clients, not just logos</h2>
+        <p>Trust built on delivery. Words from teams we partner with.</p>
+      </div>
+      <div class="testis">
+        <div class="t" data-tilt>
+          <p>“Execution at enterprise standards with the craft of a boutique studio.”</p>
+          <div class="who"><div class="avatar"></div><div><strong>Amaka O.</strong><div style="color:var(--muted);font-size:12px">CTO, Fintech</div></div></div>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2 class="section-title">RECENT WORKS</h2>
-            <p class="section-subtitle">We love what we do. Check out some of our latest works</p>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>MatchOrbit</h3>
-                    <p>Simple, Secure Matchmaking Platform. Create profiles, discover people nearby, and build meaningful connections.</p>
-                    <span class="project-tag">Dating App</span>
-                </div>
-                <div class="project-card">
-                    <h3>CityLiving</h3>
-                    <p>Find your perfect city center home, expertly managed by CityLiving. Prime real estate solutions.</p>
-                    <span class="project-tag">Real Estate</span>
-                </div>
-                <div class="project-card">
-                    <h3>BillboardConnect</h3>
-                    <p>Connect with billboard owners and find the perfect spot for your next advertising campaign.</p>
-                    <span class="project-tag">Advertising</span>
-                </div>
-                <div class="project-card">
-                    <h3>AirtimePro</h3>
-                    <p>Instant airtime, data bundles, bill payments, and crypto trading on a secure platform.</p>
-                    <span class="project-tag">FinTech</span>
-                </div>
-            </div>
-            
-            <div class="section-actions">
-                <a href="#projects" class="btn outline-btn">VIEW MORE PROJECTS</a>
-            </div>
+        <div class="t" data-tilt>
+          <p>“Cinematic interfaces that our users actually understand and enjoy.”</p>
+          <div class="who"><div class="avatar"></div><div><strong>David K.</strong><div style="color:var(--muted);font-size:12px">Product Lead, PropTech</div></div></div>
         </div>
-    </section>
-
-    <!-- Clients Section -->
-    <section id="clients" class="clients-section">
-        <div class="container">
-            <h2 class="section-title">OUR CLIENTS</h2>
-            <p class="section-subtitle">We have been honored to partner up with these clients</p>
-            
-            <div class="clients-grid">
-                <div class="client-logo">Global Bank</div>
-                <div class="client-logo">HealthCorp</div>
-                <div class="client-logo">Retail Giants</div>
-                <div class="client-logo">Tech Innovations</div>
-                <div class="client-logo">Auto Group</div>
-                <div class="client-logo">Energy Solutions</div>
-            </div>
+        <div class="t" data-tilt>
+          <p>“Reliable releases. Clear metrics. Zero drama.”</p>
+          <div class="who"><div class="avatar"></div><div><strong>Rita M.</strong><div style="color:var(--muted);font-size:12px">COO, Media</div></div></div>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">CLIENT TESTIMONIALS</h2>
-            
-            <div class="testimonial-card">
-                <p>"Working with IDDEVELOPER is a blessing. I was at the verge of giving up on developers because I had the worst experience ever until a partner recommended them. From Day 1 to the launch of my product was a breeze. From understanding what needs to be done to communicating effectively. I wish I could keep them for myself but I know other people need their kind of service. I recommend 100%."</p>
-                <div class="testimonial-author">
-                    <strong>Franklin Emmanuel</strong>
-                    <span>CEO, Kren AI</span>
-                </div>
+      </div>
+    </div>
+  </section>  <!-- Contact -->  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Let’s build with intent</h2>
+        <p>Email is preferred. We respond within one business day.</p>
+      </div>
+      <div class="contact">
+        <form class="form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" required placeholder="Your full name" />
             </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@company.com" />
+            </div>
+          </div>
+          <div class="form-row" style="grid-template-columns:1fr">
+            <div>
+              <label for="message">Project Brief</label>
+              <textarea id="message" name="message" required placeholder="Tell us the outcome you need, timeline, and budget range…"></textarea>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit"><span class="dot"></span> Send Inquiry</button>
+        </form>
+        <div class="form" style="display:grid;gap:8px">
+          <div class="eyebrow">Direct</div>
+          <div style="font-size:28px;font-weight:900">hello@iddeveloper.com</div>
+          <div style="color:#111827cc">Lagos • Remote‑friendly • Enterprise engagements</div>
+          <div style="display:flex;gap:10px;margin-top:12px">
+            <a class="btn ghost" href="https://github.com/KingRichie46" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn ghost" href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn ghost" href="#" target="_blank" rel="noopener">Twitter</a>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>  <footer>
+    <div class="footer-inner">
+      <div class="brand"><span class="brand-mark">ID</span> IDDEVELOPER</div>
+      <div>© <span id="year"></span> All rights reserved.</div>
+    </div>
+  </footer>  <!-- GSAP & ScrollTrigger -->  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">CONTACT US</h2>
-            <p class="section-subtitle">Reach out for a free consultation or start a project</p>
-            
-            <form class="contact-form">
-                <div class="form-grid">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email Address" required>
-                    <input type="tel" placeholder="Your Phone Number">
-                    <input type="text" placeholder="Subject">
-                </div>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="btn primary-btn">
-                    <i class="fas fa-paper-plane"></i> SUBMIT
-                </button>
-            </form>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>hello@iddeveloper.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+234 814 935 7007</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Lagos, Nigeria | Global Delivery</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    // Respect reduced motion
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>IDDEVELOPER</h3>
-                    <p>Enterprise software solutions with commitment to quality and competitive pricing.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#services">Services</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 IDDEVELOPER. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    // --- Tilt effect for cards/projects (subtle & performant) ---
+    const tiltTargets = document.querySelectorAll('[data-tilt]');
+    tiltTargets.forEach(el => {
+      let b = el.getBoundingClientRect();
+      const onMove = (e) => {
+        const x = (e.clientX - b.left) / b.width - 0.5;
+        const y = (e.clientY - b.top) / b.height - 0.5;
+        el.style.transform = `rotateY(${x * 6}deg) rotateX(${ -y * 6}deg) translateZ(0)`;
+      };
+      const onLeave = () => el.style.transform = 'rotateY(0) rotateX(0)';
+      el.addEventListener('mousemove', onMove);
+      el.addEventListener('mouseleave', onLeave);
+      window.addEventListener('resize', () => b = el.getBoundingClientRect());
+    });
 
-    <script src="script.js"></script>
-</body>
+    if(!reduceMotion){
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Intro timeline
+      gsap.set('.nav', {y:-40, opacity:0});
+      gsap.set('.hero .eyebrow, .hero h1, .hero .sub, .hero .cta', {opacity:0, y:20});
+      gsap.timeline({defaults:{ease:'power3.out'}})
+        .to('.nav', {y:0, opacity:1, duration:.6})
+        .to('.hero .eyebrow', {opacity:1, y:0, duration:.4}, '-=.1')
+        .to('.hero h1', {opacity:1, y:0, duration:.6}, '-=.2')
+        .to('.hero .sub', {opacity:1, y:0, duration:.6}, '-=.3')
+        .to('.hero .cta', {opacity:1, y:0, duration:.6}, '-=.3');
+
+      // Parallax orbs
+      const parallaxEls = gsap.utils.toArray('[\n data-parallax\n ]');
+      parallaxEls.forEach(el => {
+        const speed = parseFloat(el.dataset.speed || 0.2);
+        gsap.to(el, {yPercent: speed * 100, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', scrub:1}})
+      });
+
+      // Count-up stats when entering viewport
+      const counters = document.querySelectorAll('[data-count]');
+      counters.forEach(el => {
+        const target = parseInt(el.getAttribute('data-count'), 10);
+        const obj = {val: 0};
+        ScrollTrigger.create({
+          trigger: el, start: 'top 80%', once:true,
+          onEnter: () => {
+            gsap.to(obj, {
+              val: target,
+              duration: 1.2,
+              ease: 'power1.out',
+              onUpdate: () => el.textContent = Math.floor(obj.val).toLocaleString()
+            });
+          }
+        });
+      });
+
+      // Section reveals
+      gsap.utils.toArray('section .section-head, .card, .project, .t').forEach(el => {
+        gsap.from(el, {opacity:0, y:22, duration:.6, ease:'power3.out', scrollTrigger:{trigger:el, start:'top 85%'}})
+      });
+    }
+
+    // Simple client-side form handler placeholder
+    function handleSubmit(e){
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+      // TODO: Wire to Formspree / EmailJS / API. For now:
+      alert(`Thanks ${data.name}! We'll reach you at ${data.email}.`);
+      e.currentTarget.reset();
+    }
+  </script></body>
 </html>
