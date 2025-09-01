@@ -3,90 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDDEVELOPER - Premier Software Development Company</title>
+    <title>IDDEVELOPER | Enterprise Software Solutions</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Animated Background Elements -->
-    <div class="background-elements">
-        <div class="floating-icon">💻</div>
-        <div class="floating-icon">☁️</div>
-        <div class="floating-icon">⚙️</div>
-        <div class="floating-icon">🔧</div>
-        <div class="floating-icon">📱</div>
-        <div class="floating-icon">🎮</div>
-    </div>
+    <!-- Professional Background -->
+    <div class="corporate-bg"></div>
 
-    <nav>
+    <!-- Navigation -->
+    <nav class="corporate-nav">
         <div class="nav-container">
-            <h1 class="logo">IDDEVELOPER</h1>
+            <div class="nav-brand">
+                <h1 class="logo">IDDEVELOPER</h1>
+                <span class="tagline">Enterprise Solutions</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="theme-toggle">🌙</button>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn">🌙</button>
+                <a href="#contact" class="btn primary-btn">Get Proposal</a>
+            </div>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h2>Transforming Ideas Into <span class="highlight">Digital Excellence</span></h2>
-            <p class="tagline">Premier Software Development Company</p>
-            <p>Founded by Idele Richmond, IDDEVELOPER brings together top-tier talent to deliver exceptional digital solutions. With a team of expert developers, designers, and strategists, we turn your vision into reality.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn primary">Our Portfolio</a>
-                <a href="#contact" class="btn secondary">Start a Project</a>
-                <a href="#services" class="btn accent">Our Services</a>
+    <!-- Hero Section -->
+    <section id="home" class="corporate-hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Enterprise Software Solutions <span class="accent-text">That Drive Digital Transformation</span></h1>
+                <p class="hero-subtitle">Leveraging a century of expertise to deliver cutting-edge software solutions for forward-thinking enterprises.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Enterprise Clients</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label">Uptime Guarantee</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#case-studies" class="btn primary-btn">View Our Work</a>
+                    <a href="#contact" class="btn secondary-btn">Schedule Consultation</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <div class="card enterprise-card">🏢 Enterprise Systems</div>
+                    <div class="card cloud-card">☁️ Cloud Architecture</div>
+                    <div class="card ai-card">🤖 AI Integration</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section with Dual Options -->
-    <section id="contact" class="section">
-        <h2 class="section-title">Start Your Project</h2>
-        <div class="contact-container">
-            <div class="contact-options">
-                <div class="contact-card email-option">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email Us</h3>
-                    <p>Prefer email? Send us your project details directly.</p>
-                    <a href="mailto:idele@iddeveloper.com" class="btn primary">
-                        <i class="fas fa-envelope"></i> Send Email
-                    </a>
+    <!-- Solutions Section -->
+    <section id="solutions" class="corporate-section">
+        <div class="container">
+            <h2 class="section-title">Enterprise Solutions</h2>
+            <p class="section-subtitle">Comprehensive software solutions tailored for large-scale business operations</p>
+            
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">💼</div>
+                    <h3>Enterprise Resource Planning</h3>
+                    <p>Comprehensive ERP systems integrating all business processes into a unified platform.</p>
+                    <ul class="solution-features">
+                        <li>Supply Chain Management</li>
+                        <li>Financial Modules</li>
+                        <li>HR Integration</li>
+                    </ul>
                 </div>
-                
-                <div class="contact-card whatsapp-option">
-                    <div class="contact-icon">💬</div>
-                    <h3>WhatsApp</h3>
-                    <p>Quick chat? Message us directly on WhatsApp.</p>
-                    <a href="https://wa.me/2348149357007" target="_blank" class="btn whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i> Message on WhatsApp
-                    </a>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🌐</div>
+                    <h3>Digital Transformation</h3>
+                    <p>End-to-end digital transformation strategies for legacy system modernization.</p>
+                    <ul class="solution-features">
+                        <li>Cloud Migration</li>
+                        <li>Process Automation</li>
+                        <li>Data Modernization</li>
+                    </ul>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🤖</div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Intelligent systems leveraging artificial intelligence for business optimization.</p>
+                    <ul class="solution-features">
+                        <li>Predictive Analytics</li>
+                        <li>Natural Language Processing</li>
+                        <li>Computer Vision</li>
+                    </ul>
                 </div>
             </div>
-
-            <form id="contact-form" class="contact-form">
-                <h3>Or Send us a Message</h3>
-                <input type="text" id="user-name" placeholder="Your Name" required>
-                <input type="email" id="user-email" placeholder="Your Email" required>
-                <input type="text" id="company" placeholder="Company Name">
-                <textarea id="user-message" placeholder="Project Requirements" rows="5" required></textarea>
-                
-                <div class="form-buttons">
-                    <button type="submit" name="via-email" class="btn primary">
-                        <i class="fas fa-paper-plane"></i> Send via Email
-                    </button>
-                    <button type="button" id="whatsapp-submit" class="btn whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i> Send via WhatsApp
-                    </button>
-                </div>
-            </form>
         </div>
     </section>
+
+    <!-- Case Studies -->
+    <section id="case-studies" class="corporate-section dark-bg">
+        <div class="container">
+            <h2 class="section-title">Enterprise Case Studies</h2>
+            <p class="section-subtitle">Proven success in delivering large-scale enterprise solutions</p>
+
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <div class="case-header">
+                        <h3>Global Bank Digital Transformation</h3>
+                        <span class="case-tag">Banking</span>
+                    </div>
+                    <p>Complete digital transformation for a multinational banking institution serving 5M+ customers.</p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <span class="stat-value">$50M+</span>
+                            <span class="stat-label">Annual Savings</span>
+                        </div>
+                        <div class="case-stat">
+                            <span class="stat-value">68%</span>
+                            <span class="stat-label">Efficiency Gain</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-header">
+                        <h3>Healthcare ERP Implementation</h3>
+                        <span class="case-tag">Healthcare</span>
+                    </div>
+                    <p>Enterprise resource planning system for a healthcare network with 20+ facilities.</p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <span class="stat-value">99.99%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                        <div class="case-stat">
+                            <span class="stat-value">40%</span>
+                            <span class="stat-label">Cost Reduction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="corporate-section">
+        <div class="container">
+            <h2 class="section-title">Trusted by Industry Leaders</h2>
+            <div class="clients-grid">
+                <div class="client-logo">🏦 Global Bank</div>
+                <div class="client-logo">🏥 HealthCorp</div>
+                <div class="client-logo">🛒 Retail Giants</div>
+                <div class="client-logo">🏭 Industrial Solutions</div>
+                <div class="client-logo">📱 Tech Innovations</div>
+                <div class="client-logo">🚗 Auto Group</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="corporate-section dark-bg">
+        <div class="container">
+            <h2 class="section-title">Executive Leadership</h2>
+            
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <div class="image-placeholder">👨💼</div>
+                    </div>
+                    <h3>Idele Richmond</h3>
+                    <p class="leader-title">Chief Executive Officer</p>
+                    <p class="leader-bio">20+ years of experience in enterprise software architecture and digital transformation.</p>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <div class="image-placeholder">👩💻</div>
+                    </div>
+                    <h3>Sarah Chen</h3>
+                    <p class="leader-title">CTO</p>
+                    <p class="leader-bio">Expert in cloud infrastructure and scalable enterprise systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="corporate-section">
+        <div class="container">
+            <h2 class="section-title">Start Your Enterprise Project</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>enterprise@iddeveloper.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+234 814 935 7007</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lagos, Nigeria | Global Delivery</span>
+                    </div>
+                </div>
+
+                <form class="enterprise-contact-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Work Email" required>
+                    </div>
+                    <input type="text" placeholder="Company Name" required>
+                    <select required>
+                        <option value="">Project Type</option>
+                        <option>Enterprise Software</option>
+                        <option>Digital Transformation</option>
+                        <option>Cloud Migration</option>
+                        <option>AI Integration</option>
+                        <option>Consultation</option>
+                    </select>
+                    <textarea placeholder="Project Requirements" rows="5" required></textarea>
+                    <button type="submit" class="btn primary-btn">
+                        <i class="fas fa-paper-plane"></i> Request Proposal
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="corporate-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IDDEVELOPER</h3>
+                    <p>Enterprise-grade software solutions since 2022</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="#">Enterprise Software</a>
+                    <a href="#">Cloud Solutions</a>
+                    <a href="#">Digital Transformation</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IDDEVELOPER. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
