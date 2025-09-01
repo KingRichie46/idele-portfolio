@@ -9,261 +9,220 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Professional Background -->
-    <div class="corporate-bg"></div>
-
+    <!-- Wallpaper Background -->
+    <div class="wallpaper-bg"></div>
+    
     <!-- Navigation -->
-    <nav class="corporate-nav">
+    <nav class="glass-nav">
         <div class="nav-container">
             <div class="nav-brand">
                 <h1 class="logo">IDDEVELOPER</h1>
-                <span class="tagline">Enterprise Solutions</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#solutions">Solutions</a></li>
-                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#clients">Clients</a></li>
-                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-btn">🌙</button>
-                <a href="#contact" class="btn primary-btn">Get Proposal</a>
+                <a href="#contact" class="btn primary-btn">BOOK A MEETING</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="corporate-hero">
+    <section id="home" class="hero-section">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Enterprise Software Solutions <span class="accent-text">That Drive Digital Transformation</span></h1>
-                <p class="hero-subtitle">Leveraging a century of expertise to deliver cutting-edge software solutions for forward-thinking enterprises.</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">100+</span>
-                        <span class="stat-label">Enterprise Clients</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Projects Delivered</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">99.9%</span>
-                        <span class="stat-label">Uptime Guarantee</span>
-                    </div>
-                </div>
+                <div class="hero-badge">WE ARE A</div>
+                <h1>leading tech firm specializing in <span class="accent-text">enterprise software</span>, custom solutions, and innovative design.</h1>
                 <div class="hero-actions">
-                    <a href="#case-studies" class="btn primary-btn">View Our Work</a>
-                    <a href="#contact" class="btn secondary-btn">Schedule Consultation</a>
+                    <a href="tel:+2348149357007" class="btn primary-btn">
+                        <i class="fas fa-phone"></i> CALL US TODAY
+                    </a>
+                    <a href="#contact" class="btn secondary-btn">
+                        <i class="fas fa-calendar"></i> BOOK A MEETING
+                    </a>
                 </div>
-            </div>
-            <div class="hero-visual">
-                <div class="floating-cards">
-                    <div class="card enterprise-card">🏢 Enterprise Systems</div>
-                    <div class="card cloud-card">☁️ Cloud Architecture</div>
-                    <div class="card ai-card">🤖 AI Integration</div>
+                <div class="scroll-indicator">
+                    <span>SCROLL DOWN</span>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solutions Section -->
-    <section id="solutions" class="corporate-section">
+    <!-- Stats Section -->
+    <section class="stats-section">
         <div class="container">
-            <h2 class="section-title">Enterprise Solutions</h2>
-            <p class="section-subtitle">Comprehensive software solutions tailored for large-scale business operations</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">180</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">158</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Awards Received</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">22</span>
+                    <span class="stat-label">Publication Brands</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">WHAT WE DO</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Web Development</h3>
+                    <p>Custom websites tailored to your business needs, ensuring high performance, reliability, and a seamless user experience.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Mobile App Development</h3>
+                    <p>Develop robust mobile applications with intuitive interfaces and advanced functionalities to engage your users effectively.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Custom Software</h3>
+                    <p>Design and scalable software solutions tailored to meet the specific needs of your business.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Innovative Web Design</h3>
+                    <p>Design engaging and modern websites that enhance user experience and boost online presence.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Support & Maintenance</h3>
+                    <p>Provide continuous support and maintenance to ensure your applications remain up-to-date and efficient.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">RECENT WORKS</h2>
+            <p class="section-subtitle">We love what we do. Check out some of our latest works</p>
             
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <div class="solution-icon">💼</div>
-                    <h3>Enterprise Resource Planning</h3>
-                    <p>Comprehensive ERP systems integrating all business processes into a unified platform.</p>
-                    <ul class="solution-features">
-                        <li>Supply Chain Management</li>
-                        <li>Financial Modules</li>
-                        <li>HR Integration</li>
-                    </ul>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>MatchOrbit</h3>
+                    <p>Simple, Secure Matchmaking Platform. Create profiles, discover people nearby, and build meaningful connections.</p>
+                    <span class="project-tag">Dating App</span>
                 </div>
-
-                <div class="solution-card">
-                    <div class="solution-icon">🌐</div>
-                    <h3>Digital Transformation</h3>
-                    <p>End-to-end digital transformation strategies for legacy system modernization.</p>
-                    <ul class="solution-features">
-                        <li>Cloud Migration</li>
-                        <li>Process Automation</li>
-                        <li>Data Modernization</li>
-                    </ul>
+                <div class="project-card">
+                    <h3>CityLiving</h3>
+                    <p>Find your perfect city center home, expertly managed by CityLiving. Prime real estate solutions.</p>
+                    <span class="project-tag">Real Estate</span>
                 </div>
-
-                <div class="solution-card">
-                    <div class="solution-icon">🤖</div>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Intelligent systems leveraging artificial intelligence for business optimization.</p>
-                    <ul class="solution-features">
-                        <li>Predictive Analytics</li>
-                        <li>Natural Language Processing</li>
-                        <li>Computer Vision</li>
-                    </ul>
+                <div class="project-card">
+                    <h3>BillboardConnect</h3>
+                    <p>Connect with billboard owners and find the perfect spot for your next advertising campaign.</p>
+                    <span class="project-tag">Advertising</span>
+                </div>
+                <div class="project-card">
+                    <h3>AirtimePro</h3>
+                    <p>Instant airtime, data bundles, bill payments, and crypto trading on a secure platform.</p>
+                    <span class="project-tag">FinTech</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Case Studies -->
-    <section id="case-studies" class="corporate-section dark-bg">
-        <div class="container">
-            <h2 class="section-title">Enterprise Case Studies</h2>
-            <p class="section-subtitle">Proven success in delivering large-scale enterprise solutions</p>
-
-            <div class="case-studies-grid">
-                <div class="case-study-card">
-                    <div class="case-header">
-                        <h3>Global Bank Digital Transformation</h3>
-                        <span class="case-tag">Banking</span>
-                    </div>
-                    <p>Complete digital transformation for a multinational banking institution serving 5M+ customers.</p>
-                    <div class="case-stats">
-                        <div class="case-stat">
-                            <span class="stat-value">$50M+</span>
-                            <span class="stat-label">Annual Savings</span>
-                        </div>
-                        <div class="case-stat">
-                            <span class="stat-value">68%</span>
-                            <span class="stat-label">Efficiency Gain</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="case-study-card">
-                    <div class="case-header">
-                        <h3>Healthcare ERP Implementation</h3>
-                        <span class="case-tag">Healthcare</span>
-                    </div>
-                    <p>Enterprise resource planning system for a healthcare network with 20+ facilities.</p>
-                    <div class="case-stats">
-                        <div class="case-stat">
-                            <span class="stat-value">99.99%</span>
-                            <span class="stat-label">Uptime</span>
-                        </div>
-                        <div class="case-stat">
-                            <span class="stat-value">40%</span>
-                            <span class="stat-label">Cost Reduction</span>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="section-actions">
+                <a href="#projects" class="btn outline-btn">VIEW MORE PROJECTS</a>
             </div>
         </div>
     </section>
 
     <!-- Clients Section -->
-    <section id="clients" class="corporate-section">
+    <section id="clients" class="clients-section">
         <div class="container">
-            <h2 class="section-title">Trusted by Industry Leaders</h2>
+            <h2 class="section-title">OUR CLIENTS</h2>
+            <p class="section-subtitle">We have been honored to partner up with these clients</p>
+            
             <div class="clients-grid">
-                <div class="client-logo">🏦 Global Bank</div>
-                <div class="client-logo">🏥 HealthCorp</div>
-                <div class="client-logo">🛒 Retail Giants</div>
-                <div class="client-logo">🏭 Industrial Solutions</div>
-                <div class="client-logo">📱 Tech Innovations</div>
-                <div class="client-logo">🚗 Auto Group</div>
+                <div class="client-logo">Global Bank</div>
+                <div class="client-logo">HealthCorp</div>
+                <div class="client-logo">Retail Giants</div>
+                <div class="client-logo">Tech Innovations</div>
+                <div class="client-logo">Auto Group</div>
+                <div class="client-logo">Energy Solutions</div>
             </div>
         </div>
     </section>
 
-    <!-- Leadership Section -->
-    <section id="leadership" class="corporate-section dark-bg">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
         <div class="container">
-            <h2 class="section-title">Executive Leadership</h2>
+            <h2 class="section-title">CLIENT TESTIMONIALS</h2>
             
-            <div class="leadership-grid">
-                <div class="leader-card">
-                    <div class="leader-image">
-                        <div class="image-placeholder">👨💼</div>
-                    </div>
-                    <h3>Idele Richmond</h3>
-                    <p class="leader-title">Chief Executive Officer</p>
-                    <p class="leader-bio">20+ years of experience in enterprise software architecture and digital transformation.</p>
-                </div>
-
-                <div class="leader-card">
-                    <div class="leader-image">
-                        <div class="image-placeholder">👩💻</div>
-                    </div>
-                    <h3>Sarah Chen</h3>
-                    <p class="leader-title">CTO</p>
-                    <p class="leader-bio">Expert in cloud infrastructure and scalable enterprise systems.</p>
+            <div class="testimonial-card">
+                <p>"Working with IDDEVELOPER is a blessing. I was at the verge of giving up on developers because I had the worst experience ever until a partner recommended them. From Day 1 to the launch of my product was a breeze. From understanding what needs to be done to communicating effectively. I wish I could keep them for myself but I know other people need their kind of service. I recommend 100%."</p>
+                <div class="testimonial-author">
+                    <strong>Franklin Emmanuel</strong>
+                    <span>CEO, Kren AI</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="corporate-section">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Start Your Enterprise Project</h2>
+            <h2 class="section-title">CONTACT US</h2>
+            <p class="section-subtitle">Reach out for a free consultation or start a project</p>
             
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>enterprise@iddeveloper.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+234 814 935 7007</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Lagos, Nigeria | Global Delivery</span>
-                    </div>
+            <form class="contact-form">
+                <div class="form-grid">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email Address" required>
+                    <input type="tel" placeholder="Your Phone Number">
+                    <input type="text" placeholder="Subject">
                 </div>
-
-                <form class="enterprise-contact-form">
-                    <div class="form-row">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Work Email" required>
-                    </div>
-                    <input type="text" placeholder="Company Name" required>
-                    <select required>
-                        <option value="">Project Type</option>
-                        <option>Enterprise Software</option>
-                        <option>Digital Transformation</option>
-                        <option>Cloud Migration</option>
-                        <option>AI Integration</option>
-                        <option>Consultation</option>
-                    </select>
-                    <textarea placeholder="Project Requirements" rows="5" required></textarea>
-                    <button type="submit" class="btn primary-btn">
-                        <i class="fas fa-paper-plane"></i> Request Proposal
-                    </button>
-                </form>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn primary-btn">
+                    <i class="fas fa-paper-plane"></i> SUBMIT
+                </button>
+            </form>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>hello@iddeveloper.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+234 814 935 7007</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Lagos, Nigeria | Global Delivery</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="corporate-footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-brand">
                     <h3>IDDEVELOPER</h3>
-                    <p>Enterprise-grade software solutions since 2022</p>
+                    <p>Enterprise software solutions with commitment to quality and competitive pricing.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <a href="#">Enterprise Software</a>
-                    <a href="#">Cloud Solutions</a>
-                    <a href="#">Digital Transformation</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">GitHub</a>
+                <div class="footer-links">
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
             <div class="footer-bottom">
