@@ -248,3 +248,53 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+// Mobile menu toggle (add this to your existing JS)
+function setupMobileMenu() {
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelector('.nav-links');
+    
+    // Create mobile menu button
+    const mobileMenuBtn = document.createElement('button');
+    mobileMenuBtn.innerHTML = '☰';
+    mobileMenuBtn.className = 'mobile-menu-btn';
+    mobileMenuBtn.style.cssText = `
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--text-color);
+        cursor: pointer;
+    `;
+    
+    nav.querySelector('.nav-container').appendChild(mobileMenuBtn);
+    
+    // Toggle menu on click
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
+    
+    // Show/hide based on screen size
+    function checkScreenSize() {
+        if (window.innerWidth <= 768) {
+            mobileMenuBtn.style.display = 'block';
+            navLinks.style.display = 'none';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.width = '100%';
+            navLinks.style.background = 'var(--card-bg)';
+            navLinks.style.padding = '1rem';
+        } else {
+            mobileMenuBtn.style.display = 'none';
+            navLinks.style.display = 'flex';
+            navLinks.style.position = 'static';
+        }
+    }
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+}
+
+// Call this in your DOMContentLoaded
+setupMobileMenu();
