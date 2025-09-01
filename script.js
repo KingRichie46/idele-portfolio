@@ -298,3 +298,131 @@ function setupMobileMenu() {
 
 // Call this in your DOMContentLoaded
 setupMobileMenu();
+// Enhanced contact form with dual submission
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing code ...
+    
+    // Contact Form Handling
+    const contactForm = document.getElementById('contact-form');
+    const whatsappBtn = document.getElementById('whatsapp-submit');
+    
+    if (contactForm) {
+        // Email submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (e.submitter?.name === 'via-email') {
+                submitViaEmail();
+            }
+        });
+        
+        // WhatsApp submission
+        whatsappBtn.addEventListener('click', function() {
+            if (contactForm.checkValidity()) {
+                submitViaWhatsApp();
+            } else {
+                contactForm.reportValidity();
+            }
+        });
+    }
+    
+    function submitViaEmail() {
+        const formData = {
+            name: document.getElementById('user-name').value,
+            email: document.getElementById('user-email').value,
+            company: document.getElementById('company').value,
+            message: document.getElementById('user-message').value
+        };
+        
+        // Create mailto link
+        const subject = `Project Inquiry from ${formData.name}`;
+        const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company}
+
+Message:
+${formData.message}
+        `.trim();
+        
+        window.location.href = `mailto:idele@iddeveloper.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        showSuccess('Email prepared! Please send it from your email client.');
+        contactForm.reset();
+    }
+    
+    function submitViaWhatsApp() {
+        const formData = {
+            name: document.getElementById('user-name').value,
+            email: document.getElementById('user-email').value,
+            company: document.getElementById('company').value,
+            message: document.getElementById('user-message').value
+        };
+        
+        const whatsappText = `
+*IDDEVELOPER - PROJECT INQUIRY*%0A%0A
+*Name:* ${formData.name}%0A
+*Email:* ${formData.email}%0A
+*Company:* ${formData.company}%0A%0A
+*Message:*%0A${formData.message}%0A%0A
+*Sent via Portfolio Website*
+        `.trim();
+        
+        window.open(`https://wa.me/2348149357007?text=${encodeURIComponent(whatsappText)}`, '_blank');
+        showSuccess('Opening WhatsApp...');
+        contactForm.reset();
+    }
+    
+    function showSuccess(message) {
+        // Create success notification
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            z-index: 10000;
+            animation: slideInRight 0.3s ease;
+        `;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+    }
+    
+    // Create sprinkles
+    createSprinkles();
+    createTechPattern();
+});
+
+function createSprinkles() {
+    const sprinklesContainer = document.createElement('div');
+    sprinklesContainer.className = 'sprinkles';
+    
+    const colors = ['#8B0000', '#DC143C', '#FFD700', '#25D366', '#2563EB'];
+    
+    for (let i = 0; i < 50; i++) {
+        const sprinkle = document.createElement('div');
+        sprinkle.className = 'sprinkle';
+        sprinkle.style.cssText = `
+            left: ${Math.random() * 100}%;
+            animation-duration: ${5 + Math.random() * 10}s;
+            animation-delay: ${Math.random() * 5}s;
+            background: ${colors[Math.floor(Math.random() * colors.length)]};
+        `;
+        sprinklesContainer.appendChild(sprinkle);
+    }
+    
+    document.body.appendChild(sprinklesContainer);
+}
+
+function createTechPattern() {
+    const pattern = document.createElement('div');
+    pattern.className = 'tech-pattern';
+    document.body.appendChild(pattern);
+}
