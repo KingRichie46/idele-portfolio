@@ -1,108 +1,119 @@
-// Professional Animations for IDDEVELOPER
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 IDDEVELOPER Portfolio Loaded');
-    
-    // Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    body.setAttribute('data-theme', savedTheme);
-    themeToggle.textContent = savedTheme === 'light' ? '🌙' : '☀️';
-    
-    themeToggle.addEventListener('click', function() {
-        const currentTheme = body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        body.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        this.textContent = newTheme === 'light' ? '🌙' : '☀️';
-    });
-    
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-    
-    // Scroll Animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    document.querySelectorAll('.service-card, .project-card, .stat-card').forEach(el => {
-        observer.observe(el);
-    });
-    
-    // Form Handling
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('button');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> SENDING...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> SENT!';
-                submitBtn.style.background = '#28a745';
-                
-                setTimeout(() => {
-                    this.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = '';
-                }, 2000);
-            }, 1500);
-        });
-    }
+// ================= EmailJS Init =================
+// Using EmailJS Browser SDK v4
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.emailjs) {
+    // Public key provided by user
+    emailjs.init({ publicKey: "GhtvHEbXzgoG8HFQ8" });
+  }
 });
 
-// Add CSS animations
-const styles = document.createElement('style');
-styles.textContent = `
-    .service-card,
-    .project-card,
-    .stat-card {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s ease;
+// ================= Mobile Nav Toggle =================
+const toggle = document.querySelector('.nav-toggle');
+const navList = document.querySelector('.nav-list');
+if (toggle && navList) {
+  toggle.addEventListener('click', () => {
+    const open = navList.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+}
+
+// ================= Smooth Scroll (native) =================
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href.length > 1) {
+      e.preventDefault();
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      navList?.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
     }
-    
-    .animate-in {
-        opacity: 1;
-        transform: translateY(0);
+  });
+});
+
+// ================= GSAP Animations =================
+window.addEventListener('load', () => {
+  // Header drop-in
+  gsap.from('.site-header', { y: -40, opacity: 0, duration: 0.8, ease: 'power3.out' });
+
+  // Hero text sliding & button scale
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.from('.hero-title', { y: 30, opacity: 0, duration: 0.9 })
+    .from('.hero-subtitle', { y: 24, opacity: 0, duration: 0.7 }, '-=0.5')
+    .from('.hero-cta .btn', { scale: 0.85, opacity: 0, stagger: 0.12, duration: 0.5 }, '-=0.4');
+
+  // Section cards fade-up on scroll
+  if (window.ScrollTrigger) {
+    gsap.utils.toArray('[data-animate], .testimonial, .gallery-item, .card').forEach(el => {
+      gsap.fromTo(el, { y: 18, opacity: 0 }, {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+    });
+  }
+});
+
+// ================= EmailJS Form Handling =================
+const form = document.getElementById('contactForm');
+const statusEl = document.getElementById('formStatus');
+
+function setStatus(type, msg){
+  if (!statusEl) return;
+  statusEl.className = 'form-status ' + (type || '');
+  statusEl.textContent = msg || '';
+}
+
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('.submit-btn');
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    // Basic validation
+    if (!name || !email || !message) {
+      setStatus('error', 'Please fill out all fields.');
+      return;
     }
-    
-    .service-card:nth-child(1) { transition-delay: 0.1s; }
-    .service-card:nth-child(2) { transition-delay: 0.2s; }
-    .service-card:nth-child(3) { transition-delay: 0.3s; }
-    .service-card:nth-child(4) { transition-delay: 0.4s; }
-    .service-card:nth-child(5) { transition-delay: 0.5s; }
-    
-    .project-card:nth-child(1) { transition-delay: 0.1s; }
-    .project-card:nth-child(2) { transition-delay: 0.2s; }
-    .project-card:nth-child(3) { transition-delay: 0.3s; }
-    .project-card:nth-child(4) { transition-delay: 0.4s; }
-    
-    .stat-card:nth-child(1) { transition-delay: 0.1s; }
-    .stat-card:nth-child(2) { transition-delay: 0.2s; }
-    .stat-card:nth-child(3) { transition-delay: 0.3s; }
-    .stat-card:nth-child(4) { transition-delay: 0.4s; }
-`;
-document.head.appendChild(styles);
+
+    setStatus('', 'Sending…');
+    submitBtn.disabled = true;
+
+    try {
+      // Service & template per user details
+      const SERVICE_ID = 'service_0vmnuza';
+      const TEMPLATE_ID = 'template_656cmtc';
+
+      // EmailJS expects a params object with your template variables
+      const templateParams = {
+        from_name: String(name),
+        reply_to: String(email),
+        message: String(message)
+      };
+
+      // Send
+      const res = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+
+      // Success
+      setStatus('success', 'Thanks! Your message has been sent.');
+      form.reset();
+      console.log('EmailJS response:', res);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      // Helpful error in UI
+      const msg = (err && err.text) ? err.text : 'We could not send your message. Please try again later.';
+      setStatus('error', msg);
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+}
