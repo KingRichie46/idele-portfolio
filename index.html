@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <style>
+    /* --- Reset & Fonts --- */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: "Segoe UI", sans-serif; background: #fff; color: #111; scroll-behavior: smooth; overflow-x: hidden; }
     h1,h2,h3 { color: #8B0000; }
@@ -21,7 +22,8 @@
     #preloader.hidden { opacity: 0; visibility: hidden; }
     #preloader h2 { color: #FFD700; margin-bottom: 20px; }
     #preloader .spinner {
-      width: 40px; height: 40px; border: 4px solid #FFD700; border-top: 4px solid transparent;
+      width: 40px; height: 40px;
+      border: 4px solid #FFD700; border-top: 4px solid transparent;
       border-radius: 50%; animation: spin 1s linear infinite;
     }
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -47,8 +49,10 @@
     }
     .hero h1 { font-size: 3rem; margin-bottom: 15px; }
     .hero p { font-size: 1.2rem; margin-bottom: 30px; }
-    .hero .btn { margin: 10px; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer;
-      font-size: 1rem; transition: transform 0.3s ease; }
+    .hero .btn { 
+      margin: 10px; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer;
+      font-size: 1rem; transition: transform 0.3s ease;
+    }
     .btn-primary { background: #8B0000; color: white; }
     .btn-secondary { background: #FFD700; color: #111; }
     .btn:hover { transform: scale(1.05); }
@@ -70,13 +74,6 @@
     .project-card img { width: 100%; border-radius: 12px; transition: transform 0.4s ease; }
     .project-card:hover img { transform: scale(1.05); }
 
-    /* --- CEO Section --- */
-    .ceo { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
-    .ceo img { width: 100%; max-width: 400px; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .ceo-text { flex: 1; }
-    .ceo-text h2 { margin-bottom: 15px; }
-    .ceo-text p { margin-bottom: 15px; font-size: 1.1rem; line-height: 1.6; }
-
     /* --- Testimonials --- */
     .testimonial { max-width: 600px; margin: auto; text-align: center; font-style: italic; }
     .testimonial p { margin-bottom: 15px; }
@@ -86,14 +83,21 @@
     form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
     .form-group { display: flex; flex-direction: column; text-align: left; }
     label { font-weight: 500; margin-bottom: 5px; }
-    input, textarea { padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; }
-    button { background: #8B0000; color: white; border: none;
+    input, textarea {
+      padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;
+    }
+    button { 
+      background: #8B0000; color: white; border: none;
       padding: 12px 20px; font-size: 16px; border-radius: 6px; cursor: pointer;
       transition: background 0.3s ease; position: relative; display: inline-flex;
-      align-items: center; justify-content: center; gap: 10px; }
+      align-items: center; justify-content: center; gap: 10px;
+    }
     button:disabled { opacity: 0.7; cursor: not-allowed; }
-    .spinner { width: 16px; height: 16px; border: 2px solid #fff; border-top: 2px solid transparent;
-      border-radius: 50%; display: none; animation: spin 0.8s linear infinite; }
+    .spinner {
+      width: 16px; height: 16px;
+      border: 2px solid #fff; border-top: 2px solid transparent;
+      border-radius: 50%; display: none; animation: spin 0.8s linear infinite;
+    }
     .status { margin-top: 10px; font-size: 14px; }
     .status .success { color: green; }
     .status .error { color: red; }
@@ -116,7 +120,6 @@
     <div class="logo"><h2>IDDeveloper</h2></div>
     <div class="nav-links">
       <a href="#about">About</a>
-      <a href="#ceo">CEO</a>
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#testimonials">Testimonials</a>
@@ -136,29 +139,11 @@
   <section id="about" class="about">
     <h2>About Us</h2>
     <p>
-      IDDeveloper is a <strong>team of experts</strong> passionate about building scalable web,
-      mobile, and custom software solutions. With a focus on innovation, reliability, and excellence,
-      we transform ideas into digital realities that empower businesses worldwide.
+      IDDeveloper specializes in crafting scalable web, mobile, and custom software
+      solutions for enterprises worldwide. With a focus on innovation and reliability,
+      we transform ideas into reality.
     </p>
     <img src="https://source.unsplash.com/800x600/?team,office" alt="Our Team">
-  </section>
-
-  <!-- CEO Spotlight -->
-  <section id="ceo" class="ceo">
-    <img src="https://source.unsplash.com/500x600/?businessman,ceo" alt="Idele Richmond - CEO">
-    <div class="ceo-text">
-      <h2>Meet Our CEO - Idele Richmond</h2>
-      <p>
-        At the heart of IDDeveloper’s vision is <strong>Idele Richmond</strong>, a leader committed
-        to pushing boundaries in technology and delivering excellence. With deep industry insight
-        and an eye for innovation, Idele drives the team to create cutting-edge solutions for clients
-        across industries.
-      </p>
-      <p>
-        Under his leadership, IDDeveloper has grown into a powerhouse of skilled developers,
-        designers, and strategists — united in delivering value, reliability, and world-class software.
-      </p>
-    </div>
   </section>
 
   <!-- Services -->
@@ -235,6 +220,7 @@
     </p>
   </footer>
 
+  <!-- Scripts -->
   <script>
     // Init EmailJS
     (function(){ emailjs.init("GhtvHEbXzgoG8HFQ8"); })();
