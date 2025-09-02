@@ -1,117 +1,393 @@
+Here’s the project split into three files:
+
+---
+
+### `index.html`
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IDDeveloper | Enterprise Software Solutions</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- GSAP Animation Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
-  <script src="script.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IDDEVELOPER — Apple‑Tier Redesign</title>
+  <meta name="description" content="Premium software studio portfolio with cinematic scroll, Apple‑style motion, and enterprise credibility." />
+  <meta property="og:title" content="IDDEVELOPER — Premium Software Studio" />
+  <meta property="og:description" content="Cinematic scroll. Refined motion. Enterprise delivery." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#000000" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navigation -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">IDDeveloper</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Nav -->
+  <nav class="nav" aria-label="Primary">
+    <div class="brand"><span class="brand-mark">ID</span> IDDEVELOPER</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="#contact"><span class="dot"></span> Book a Meeting</a>
+    </div>
+  </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Enterprise Software Solutions</h1>
-      <p>Led by <strong>Idele Richmond</strong>, IDDeveloper is a team of experts crafting world-class digital solutions.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn primary">Book a Meeting</a>
-        <a href="tel:+1234567890" class="btn secondary">Call Us Today</a>
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <div class="orb red" data-parallax data-speed="-0.15"></div>
+    <div class="orb gold" data-parallax data-speed="0.22"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Enterprise Software. Boutique Craft.</div>
+        <h1>Build what Fortune‑grade teams ship.<br/>Cinematic web, mobile & platforms.</h1>
+        <p class="sub">We architect mission‑critical software with premium UX and Apple‑level polish. Web, mobile, and custom platforms—delivered with discipline.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact"><span class="dot"></span> Book a Meeting</a>
+          <a class="btn ghost" href="tel:+2348000000000">Call Us Today</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="num" data-count="180">0</div><div class="label">Projects</div></div>
+          <div class="stat"><div class="num" data-count="158">0</div><div class="label">Clients</div></div>
+          <div class="stat"><div class="num" data-count="15">0</div><div class="label">Awards</div></div>
+          <div class="stat"><div class="num" data-count="22">0</div><div class="label">Brands</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="project showcase" data-tilt>
+          <img alt="Project showcase" src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1400&auto=format&fit=crop"/>
+          <div class="overlay"></div>
+          <div class="meta">
+            <span class="tag">Flagship</span>
+            <h3>MatchOrbit — Trading Intelligence</h3>
+            <p>High‑frequency insights with realtime dashboards and multi‑tenant architecture.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>IDDeveloper, founded by <strong>Idele Richmond</strong>, is a team of seasoned experts delivering innovative, scalable, and enterprise-ready solutions for businesses worldwide.</p>
-    <img src="https://via.placeholder.com/600x300" alt="Our Team">
-  </section>
+  </header>
 
   <!-- Services -->
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="service-card">Web Development</div>
-      <div class="service-card">Mobile Apps</div>
-      <div class="service-card">Custom Software</div>
-      <div class="service-card">UI/UX Design</div>
-      <div class="service-card">IT Support</div>
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>What we do — with unreasonable polish</h2>
+        <p>From greenfield to scale‑up, we ship end‑to‑end solutions with measurable outcomes and premium UX.</p>
+      </div>
+      <div class="services">
+        <article class="card" data-tilt>
+          <div class="chip">Core</div>
+          <h3>Web Platforms</h3>
+          <p>React, Next.js, Node. Secure, observable, and fast.</p>
+        </article>
+        <article class="card" data-tilt>
+          <div class="chip">Mobile</div>
+          <h3>iOS & Android</h3>
+          <p>Native‑feel apps with offline‑first data layers.</p>
+        </article>
+        <article class="card" data-tilt>
+          <div class="chip">Custom</div>
+          <h3>Software Engineering</h3>
+          <p>APIs, microservices, data pipelines, integrations.</p>
+        </article>
+        <article class="card" data-tilt>
+          <div class="chip">Design</div>
+          <h3>Product & Brand</h3>
+          <p>Design systems, micro‑interactions, accessibility.</p>
+        </article>
+        <article class="card" data-tilt>
+          <div class="chip">Care</div>
+          <h3>Support & DevOps</h3>
+          <p>SLAs, CI/CD, monitoring, incident response.</p>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="projects">
-    <h2>Our Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x250" alt="Project 1">
-        <h3>Project One</h3>
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Selected work — narrative reveals</h2>
+        <p>Hover to preview. Scroll for story. We’ll swap in your actual assets before launch.</p>
       </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x250" alt="Project 2">
-        <h3>Project Two</h3>
-      </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x250" alt="Project 3">
-        <h3>Project Three</h3>
-      </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x250" alt="Project 4">
-        <h3>Project Four</h3>
+      <div class="projects">
+        <a class="project" href="#" data-tilt>
+          <img alt="CityLiving" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop"/>
+          <div class="overlay"></div>
+          <div class="meta">
+            <span class="tag">CityLiving</span>
+            <h3>Real‑estate platform with dynamic pricing</h3>
+          </div>
+        </a>
+        <a class="project" href="#" data-tilt>
+          <img alt="BillboardConnect" src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1400&auto=format&fit=crop"/>
+          <div class="overlay"></div>
+          <div class="meta">
+            <span class="tag">BillboardConnect</span>
+            <h3>Out‑of‑home ad inventory, realtime</h3>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonials" class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial">
-      <p>“IDDeveloper transformed our digital strategy. Professional and reliable!”</p>
-    </div>
-    <div class="testimonial">
-      <p>“Idele Richmond and his team delivered beyond expectations. Highly recommend.”</p>
-    </div>
-    <div class="testimonial">
-      <p>“Top-notch solutions with enterprise-grade quality. A pleasure to work with.”</p>
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <h2>Clients, not just logos</h2>
+        <p>Trust built on delivery. Words from teams we partner with.</p>
+      </div>
+      <div class="testis">
+        <div class="t" data-tilt>
+          <p>“Execution at enterprise standards with the craft of a boutique studio.”</p>
+          <div class="who"><div class="avatar"></div><div><strong>Amaka O.</strong><div class="role">CTO, Fintech</div></div></div>
+        </div>
+        <div class="t" data-tilt>
+          <p>“Cinematic interfaces that our users actually understand and enjoy.”</p>
+          <div class="who"><div class="avatar"></div><div><strong>David K.</strong><div class="role">Product Lead, PropTech</div></div></div>
+        </div>
+        <div class="t" data-tilt>
+          <p>“Reliable releases. Clear metrics. Zero drama.”</p>
+          <div class="who"><div class="avatar"></div><div><strong>Rita M.</strong><div class="role">COO, Media</div></div></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form id="contact-form">
-      <input type="text" id="name" name="name" placeholder="Your Name" required>
-      <input type="email" id="email" name="email" placeholder="Your Email" required>
-      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn primary">Send Message</button>
-    </form>
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Let’s build with intent</h2>
+        <p>Email is preferred. We respond within one business day.</p>
+      </div>
+      <div class="contact">
+        <form class="form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" required placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@company.com" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="message">Project Brief</label>
+              <textarea id="message" name="message" required placeholder="Tell us the outcome you need, timeline, and budget range…"></textarea>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit"><span class="dot"></span> Send Inquiry</button>
+        </form>
+        <div class="form direct">
+          <div class="eyebrow">Direct</div>
+          <div class="email">hello@iddeveloper.com</div>
+          <div class="location">Lagos • Remote‑friendly • Enterprise engagements</div>
+          <div class="socials">
+            <a class="btn ghost" href="https://github.com/KingRichie46" target="_blank">GitHub</a>
+            <a class="btn ghost" href="#" target="_blank">LinkedIn</a>
+            <a class="btn ghost" href="#" target="_blank">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>© 2025 IDDeveloper. Built with ❤️ by Idele Richmond & Team</p>
-    <div class="socials">
-      <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Twitter</a>
+    <div class="footer-inner">
+      <div class="brand"><span class="brand-mark">ID</span> IDDEVELOPER</div>
+      <div>© <span id="year"></span> All rights reserved.</div>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+```
+
+---
+
+### `style.css`
+```css
+/* === Variables, Reset, Global === */
+:root{
+  --red-900:#8B0000;
+  --red-700:#DC143C;
+  --gold:#FFD700;
+  --ink:#0b0b10;
+  --paper:#ffffff;
+  --muted:#6b7280;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter, system-ui, sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(1200px 800px at 10% -10%, rgba(139,0,0,.10), transparent 60%),
+    radial-gradient(900px 600px at 110% 10%, rgba(220,20,60,.10), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.04), transparent 20%);
+}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:.2s}
+.btn-primary{background:var(--ink);color:#fff}
+.btn .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.btn:hover{transform:translateY(-2px)}
+
+/* Nav */
+.nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1100px,92%);display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-radius:18px;background:rgba(255,255,255,.6);backdrop-filter:blur(14px);z-index:50}
+.brand{font-weight:800;display:flex;align-items:center;gap:10px}
+.brand-mark{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,var(--red-900),var(--red-700));color:white}
+.nav-links{display:flex;gap:18px;align-items:center}
+
+/* Hero */
+.hero{min-height:100vh;display:grid;place-items:center;padding:120px 0 80px;position:relative}
+.hero-inner{width:min(1100px,92%);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.eyebrow{font-weight:800;letter-spacing:.16em;font-size:12px;color:var(--red-900)}
+h1{font-size:clamp(42px,6vw,84px);line-height:1.1}
+.sub{font-size:clamp(16px,1.6vw,20px);color:#111827cc;max-width:56ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.orb{position:absolute;filter:blur(40px);opacity:.35;border-radius:50%}
+.orb.red{background:radial-gradient(circle,var(--red-700),var(--red-900));width:380px;height:380px;top:16%;left:-80px}
+.orb.gold{background:radial-gradient(circle,var(--gold),#b8860b);width:220px;height:220px;bottom:10%;right:8%}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.stat{padding:18px;border-radius:14px;background:rgba(255,255,255,.65);text-align:center}
+.num{font-size:clamp(28px,3.3vw,40px);font-weight:900}
+.label{color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase}
+
+/* Sections */
+section{padding:120px 0}
+.container{width:min(1100px,92%);margin:0 auto}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}
+.section-head h2{font-size:clamp(28px,4vw,52px)}
+.section-head p{max-width:60ch;color:#111827cc}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.card{padding:22px;border-radius:18px;background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.08)}
+.card h3{margin-bottom:6px}
+.card p{color:#111827cc}
+.chip{position:absolute;top:12px;right:12px;padding:6px 10px;border-radius:999px;background:rgba(139,0,0,.08);color:var(--red-900);font-size:11px;font-weight:800}
+
+/* Projects */
+.projects{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+.project{position:relative;border-radius:20px;overflow:hidden;min-height:300px;display:flex;align-items:flex-end;color:white}
+.project img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.0),rgba(0,0,0,.65))}
+.meta{position:relative;padding:18px}
+.tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.14);font-size:11px;font-weight:700}
+
+/* Testimonials */
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.t{padding:22px;border-radius:18px;background:
+
+---
+
+## EmailJS Integration — code changes
+
+### 1) Add the SDK in `index.html` (right before your `script.js`)
+```html
+<!-- EmailJS Browser SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+```
+
+### 2) Update the form markup in `index.html`
+Find the Contact section form and:
+- give it an **ID** of `contactForm`
+- remove the inline `onsubmit` handler
+- set **name attributes** to match your EmailJS template variables
+- add a hidden **honeypot** field and a **status** element
+
+```html
+<form id="contactForm">
+  <div class="form-row">
+    <div>
+      <label for="name">Name</label>
+      <input id="name" name="from_name" required placeholder="Your full name" />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" name="reply_to" type="email" required placeholder="you@company.com" />
+    </div>
+  </div>
+  <div class="form-row" style="grid-template-columns:1fr">
+    <div>
+      <label for="message">Project Brief</label>
+      <textarea id="message" name="message" required placeholder="Tell us the outcome you need, timeline, and budget range…"></textarea>
+    </div>
+  </div>
+
+  <!-- Honeypot (spam trap) -->
+  <input type="text" name="botcheck" id="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+  <button class="btn btn-primary" type="submit"><span class="dot"></span> Send Inquiry</button>
+  <p id="formStatus" class="form-status" aria-live="polite"></p>
+</form>
+```
+
+*(Optional)* add a little CSS for the status line in `style.css`:
+```css
+.form-status{margin-top:10px;font-weight:700}
+```
+
+### 3) Initialize and send with EmailJS in `script.js`
+Add these constants + handler near the end of your file (keep your GSAP code):
+```js
+// ===== EmailJS Setup =====
+// Replace the placeholders with your actual IDs from the EmailJS dashboard
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";     // e.g. "jF9Yzabcd123"
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";     // e.g. "service_portfolio"
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";   // e.g. "template_contact"
+
+// Initialize EmailJS
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+// Form submission
+const form = document.getElementById('contactForm');
+if(form){
+  const statusEl = document.getElementById('formStatus');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // Honeypot check
+    if(form.botcheck && form.botcheck.value){
+      return; // likely a bot
+    }
+
+    const original = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Sending…';
+    statusEl.textContent = '';
+
+    try{
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+      statusEl.textContent = '✅ Thanks! Your message has been sent.';
+      form.reset();
+    }catch(err){
+      console.error(err);
+      statusEl.textContent = '❌ Sorry, there was a problem. Please email hello@iddeveloper.com.';
+    }finally{
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = original;
+    }
+  });
+}
+```
+
