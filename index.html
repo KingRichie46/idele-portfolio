@@ -2,42 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IDDEVELOPER Institute</title>
-  <!-- Google Font for futuristic sans-serif -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- GSAP animation library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-  <!-- EmailJS (included on all pages) -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="script.js"></script>
 </head>
 <body>
-  <header>
-    <img class="logo" src="logo.png" alt="IDDEVELOPER Institute Logo">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="students.html">Students</a>
-      <a href="clients.html">Clients</a>
-      <a href="workers.html">Experts</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- Hero Section -->
+  <header class="hero">
+    <img src="logo.png" alt="IDDEVELOPER Logo" class="logo">
+    <h1>Welcome to <span>IDDEVELOPER Institute</span></h1>
+    <p class="tagline">Building Our Finest Minds in Technology, Creativity, and Collaboration.</p>
+    <div class="cta-buttons">
+      <a href="#about" class="btn">Learn More</a>
+      <a href="#join" class="btn btn-outline">Get Started</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1 class="hero-title">Welcome to IDDEVELOPER Institute</h1>
-    <p class="hero-subtitle">Learn. Build. Create. Together.</p>
-    <div class="cta-buttons">
-      <a class="cta-btn" href="students.html">Join as Student</a>
-      <a class="cta-btn" href="clients.html">Hire as Client</a>
-      <a class="cta-btn" href="workers.html">Work with Us</a>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+      IDDEVELOPER Institute is a hub for students, teachers, clients, and innovators.
+      Our mission is to empower the next generation of developers and creators through
+      education, mentorship, and real-world collaboration.
+    </p>
+  </section>
+
+  <!-- What We Offer -->
+  <section class="offers">
+    <h2>What We Offer</h2>
+    <div class="cards">
+      <div class="card">🎓 <h3>For Students</h3><p>Learn in-demand tech skills, build projects, and prepare for your future.</p></div>
+      <div class="card">👩‍🏫 <h3>For Teachers</h3><p>Mentor the next generation, share your expertise, and inspire learners.</p></div>
+      <div class="card">💼 <h3>For Clients</h3><p>Hire skilled developers, get innovative solutions, and collaborate with talent.</p></div>
+      <div class="card">🌍 <h3>For Community</h3><p>Join a network of innovators, thinkers, and creators shaping the future.</p></div>
     </div>
   </section>
 
+  <!-- Why Choose Us -->
+  <section class="why">
+    <h2>Why Choose IDDEVELOPER?</h2>
+    <ul>
+      <li>✔ Hands-on learning with real projects</li>
+      <li>✔ Expert mentors and teachers</li>
+      <li>✔ Opportunities to work with real clients</li>
+      <li>✔ A global community of innovators</li>
+    </ul>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="join" class="cta-final">
+    <h2>Join IDDEVELOPER Today</h2>
+    <p>Whether you’re a student, teacher, client, or innovator, there’s a place for you at IDDEVELOPER.</p>
+    <div class="cta-buttons">
+      <a href="students.html" class="btn">🎓 Join as Student</a>
+      <a href="experts.html" class="btn">👩‍🏫 Become a Mentor</a>
+      <a href="clients.html" class="btn">💼 Hire Talent</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    © 2025 IDDEVELOPER Institute. All rights reserved.
+    <p>© 2025 IDDEVELOPER Institute. All rights reserved.</p>
   </footer>
 </body>
 </html>
