@@ -1,297 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IDDEVELOPER Institute — Learn. Build. Create. Together.</title>
-  <meta name="description" content="IDDEVELOPER Institute — an institute and service hub for software engineering, technology and digital creation." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDDEVELOPER Institute</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⚡</text></svg>">
-
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="IDDEVELOPER Institute" />
-  <meta property="og:description" content="Learn. Build. Create. Together." />
-  <meta property="og:type" content="website" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <!-- ===== Header / Nav ===== -->
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="IDDEVELOPER Home">
-        <span class="brand-mark">ID</span><span class="brand-name">DEVELOPER</span> <span class="brand-institute">Institute</span>
-      </a>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
-
-      <nav class="site-nav" role="navigation">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#students">Learning</a></li>
-          <li><a href="#clients">Client Services</a></li>
-          <li><a href="#workers">Experts</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">ID<span>DEVELOPER</span> Institute</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#learning">Learning</a></li>
+        <li><a href="#client-services">Client Services</a></li>
+        <li><a href="#experts">Experts</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- ===== Hero / Landing ===== -->
-  <main id="home">
-    <section class="hero" aria-label="Welcome">
-      <div class="hero-media">
-        <!-- Subtle gradient halo + particles via CSS -->
-        <div class="halo"></div>
-        <canvas id="particles" aria-hidden="true"></canvas>
+  <!-- Landing Section -->
+  <section id="landing" class="landing">
+    <div class="landing-content">
+      <h1>Welcome to IDDEVELOPER Institute</h1>
+      <p>Learn. Build. Create. Together.</p>
+      <div class="buttons">
+        <a href="#learning" class="btn">Join as Student</a>
+        <a href="#client-services" class="btn">Hire as Client</a>
+        <a href="#experts" class="btn">Work with Us</a>
       </div>
-      <div class="container hero-inner">
-        <h1 class="title reveal-up">Welcome to <span class="txt-gold">IDDEVELOPER Institute</span></h1>
-        <p class="subtitle reveal-up delay-1">Learn. Build. Create. Together.</p>
-        <div class="cta-group reveal-up delay-2">
-          <a href="#students" class="btn btn-primary">Join as Student</a>
-          <a href="#clients" class="btn btn-outline">Hire as Client</a>
-          <a href="#workers" class="btn btn-ghost">Work with Us</a>
-        </div>
-        <div class="hero-badges reveal-up delay-3" aria-hidden="true">
-          <span>Software Engineering</span><span>Design</span><span>Game Dev</span><span>Brand & Identity</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== About ===== -->
-    <section id="about" class="section about">
-      <div class="container grid-2">
-        <div class="stack">
-          <h2 class="section-title reveal-up">About Us</h2>
-          <p class="lead reveal-up delay-1">
-            IDDEVELOPER is an institute and service hub for everything software engineering, technology, and digital creation.
-          </p>
-          <p class="reveal-up delay-2">
-            Our philosophy is simple: <strong>Learn. Build. Create. Together.</strong> We empower students, collaborate with clients, and enable experts to teach and deliver world-class products.
-          </p>
-          <ul class="bullets reveal-up delay-3">
-            <li>Students → Courses, mentorship, and real projects.</li>
-            <li>Clients → Hire our expert team for web, apps, games, and branding.</li>
-            <li>Workers → Teach, take contracts, and contribute to flagship projects.</li>
-          </ul>
-        </div>
-        <div class="about-card reveal-up delay-2">
-          <div class="about-photo" role="img" aria-label="CEO Idele Richmond photo placeholder"></div>
-          <div class="about-content">
-            <h3>CEO: Idele Richmond</h3>
-            <p>Founder and visionary behind IDDEVELOPER—building a community where learning and creation blend seamlessly.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Learning / Students ===== -->
-    <section id="students" class="section students">
-      <div class="container">
-        <h2 class="section-title center reveal-up">Learning at IDDEVELOPER</h2>
-        <p class="center reveal-up delay-1">Master modern skills across software engineering, design, and digital creation—guided by mentors and real projects.</p>
-
-        <div class="cards">
-          <article class="card reveal-fade">
-            <h3>Software Engineering</h3>
-            <p>Full-stack web, mobile, cloud fundamentals, DevOps, and best practices.</p>
-          </article>
-          <article class="card reveal-fade delay-1">
-            <h3>Design</h3>
-            <p>UI/UX, product thinking, graphic design systems, and prototyping.</p>
-          </article>
-          <article class="card reveal-fade delay-2">
-            <h3>Game Development</h3>
-            <p>Gameplay programming, Unity/Unreal basics, 2D/3D pipelines, publishing.</p>
-          </article>
-        </div>
-
-        <!-- Student Signup -->
-        <div class="panel reveal-up delay-2">
-          <h3>Student Sign-Up</h3>
-          <form id="studentForm" class="form">
-            <div class="field">
-              <label for="student_name">Full Name</label>
-              <input id="student_name" name="student_name" type="text" placeholder="Jane Doe" required>
-            </div>
-            <div class="field">
-              <label for="student_email">Email</label>
-              <input id="student_email" name="student_email" type="email" placeholder="jane@email.com" required>
-            </div>
-            <div class="field">
-              <label for="student_track">Interest / Track</label>
-              <select id="student_track" name="student_track" required>
-                <option value="">Choose a track…</option>
-                <option>Software Engineering</option>
-                <option>Design</option>
-                <option>Game Development</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Create Student Account</button>
-            <p class="form-note">Already enrolled? <a href="#" class="muted">Login (coming soon)</a></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Client Services ===== -->
-    <section id="clients" class="section clients">
-      <div class="container">
-        <h2 class="section-title center reveal-up">Client Services</h2>
-        <p class="center reveal-up delay-1">Websites, apps, games, and brand identities—built by a vetted team of experts.</p>
-
-        <div class="cards services">
-          <article class="card reveal-fade">
-            <h3>Websites & Apps</h3>
-            <p>Modern, performant, and accessible digital products.</p>
-          </article>
-          <article class="card reveal-fade delay-1">
-            <h3>Brand & Identity</h3>
-            <p>Logos, systems, and visual languages that scale.</p>
-          </article>
-          <article class="card reveal-fade delay-2">
-            <h3>Game Development</h3>
-            <p>From prototype to polished releases.</p>
-          </article>
-        </div>
-
-        <!-- Client Request Form (EmailJS) -->
-        <div class="panel reveal-up delay-2">
-          <h3>Request a Project</h3>
-          <form id="clientForm" class="form">
-            <div class="field">
-              <label for="client_name">Your Name</label>
-              <input id="client_name" name="client_name" type="text" placeholder="John Client" required>
-            </div>
-            <div class="field">
-              <label for="client_email">Email</label>
-              <input id="client_email" name="client_email" type="email" placeholder="john@company.com" required>
-            </div>
-            <div class="field">
-              <label for="client_service">Service</label>
-              <select id="client_service" name="client_service" required>
-                <option value="">Select a service…</option>
-                <option>Website</option>
-                <option>Mobile App</option>
-                <option>Game Development</option>
-                <option>Branding / Identity</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="client_message">Project Brief</label>
-              <textarea id="client_message" name="client_message" rows="5" placeholder="Tell us about your goals, timeline, and budget…" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-outline">Send Request</button>
-            <p class="form-note">This form sends via EmailJS to your configured service/template.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Experts / Workers ===== -->
-    <section id="workers" class="section workers">
-      <div class="container">
-        <h2 class="section-title center reveal-up">Experts & Workers</h2>
-        <p class="center reveal-up delay-1">Teach, take on contracts, and contribute to projects inside IDDEVELOPER.</p>
-
-        <div class="panel reveal-up delay-2">
-          <h3>Register as an Expert</h3>
-          <form id="workerForm" class="form">
-            <div class="field">
-              <label for="worker_name">Full Name</label>
-              <input id="worker_name" name="worker_name" type="text" placeholder="Alex Expert" required>
-            </div>
-            <div class="field">
-              <label for="worker_email">Email</label>
-              <input id="worker_email" name="worker_email" type="email" placeholder="alex@domain.com" required>
-            </div>
-            <div class="field">
-              <label for="worker_role">Role</label>
-              <select id="worker_role" name="worker_role" required>
-                <option value="">Choose a role…</option>
-                <option>Teacher / Mentor</option>
-                <option>Developer</option>
-                <option>Designer</option>
-                <option>Game Developer</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="worker_portfolio">Portfolio / Links</label>
-              <input id="worker_portfolio" name="worker_portfolio" type="url" placeholder="https://your-portfolio.com">
-            </div>
-            <div class="field">
-              <label for="worker_message">Tell us about your experience</label>
-              <textarea id="worker_message" name="worker_message" rows="5" placeholder="Skills, stack, availability, rate expectations…" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit Application</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Contact ===== -->
-    <section id="contact" class="section contact">
-      <div class="container grid-2">
-        <div class="stack">
-          <h2 class="section-title reveal-up">Contact</h2>
-          <p class="reveal-up delay-1">Have something else in mind? Reach out. We’ll reply swiftly.</p>
-          <ul class="contact-list reveal-up delay-2">
-            <li><strong>Email:</strong> <a href="mailto:hello@iddeveloper.example">hello@iddeveloper.example</a></li>
-            <li><strong>Location:</strong> Global / Remote</li>
-          </ul>
-        </div>
-        <div class="panel reveal-up delay-2">
-          <h3>Quick Message</h3>
-          <form id="contactForm" class="form">
-            <div class="field">
-              <label for="contact_name">Name</label>
-              <input id="contact_name" name="contact_name" type="text" placeholder="Your Name" required>
-            </div>
-            <div class="field">
-              <label for="contact_email">Email</label>
-              <input id="contact_email" name="contact_email" type="email" placeholder="you@mail.com" required>
-            </div>
-            <div class="field">
-              <label for="contact_message">Message</label>
-              <textarea id="contact_message" name="contact_message" rows="5" placeholder="Hello IDDEVELOPER…" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-outline">Send</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ===== Footer ===== -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> IDDEVELOPER Institute. All rights reserved.</p>
-      <nav aria-label="footer navigation">
-        <a href="#about">About</a>
-        <a href="#students">Learning</a>
-        <a href="#clients">Services</a>
-        <a href="#workers">Experts</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </div>
-  </footer>
+  </section>
 
-  <!-- Toasts -->
-  <div id="toast" role="status" aria-live="polite"></div>
+  <!-- Placeholder Sections -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Story of IDDEVELOPER Institute and our mission.</p>
+  </section>
 
-  <!-- Vendor: GSAP + ScrollTrigger -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-HG+z0V7bVj3e7g8xk3rjB+e3uDaA7T8JrLx0y1TzP7hZ1o9t9fQ1pGJ7z4aT8I2e0qQnQm8W2mPsq0jv1cQvYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-jP3k2H1qf1kOQk7R8VtT+9h1m3Y1QOQv9dP9Q3L3gF3r7iS9D1Cjg2m9JH3y1d6tI8c9y8lq1v9yYQdYJYH5dQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <section id="learning">
+    <h2>Learning</h2>
+    <p>Courses and mentorship programs.</p>
+  </section>
 
-  <!-- EmailJS SDK -->
-  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <section id="client-services">
+    <h2>Client Services</h2>
+    <p>Hire us for websites, apps, games, and branding.</p>
+  </section>
 
-  <!-- App -->
-  <script defer src="script.js"></script>
+  <section id="experts">
+    <h2>Experts</h2>
+    <p>Join our team of professionals and teachers.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
